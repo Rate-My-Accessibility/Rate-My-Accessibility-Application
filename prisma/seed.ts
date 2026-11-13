@@ -1,4 +1,4 @@
-import { PrismaClient, Role, Condition } from '@prisma/client';
+import { PrismaClient, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -23,17 +23,16 @@ async function main() {
     });
     // console.log(`  Created user: ${user.email} with role: ${user.role}`);
   });
-  for (const data of config.defaultData) {
-    const condition = data.condition as Condition || Condition.good;
-    console.log(`  Adding stuff: ${JSON.stringify(data)}`);
-    await prisma.stuff.upsert({
-      where: { id: config.defaultData.indexOf(data) + 1 },
+  for (const elevator of config.defaultElevators) {
+    console.log(`  Adding elevator: ${elevator.name}`);
+    await prisma.elevator.upsert({
+      where: { id: config.defaultElevators.indexOf(elevator) + 1 },
       update: {},
       create: {
-        name: data.name,
-        quantity: data.quantity,
-        owner: data.owner,
-        condition,
+        name: elevator.name,
+        photos: elevator.photos,
+        scores: elevator.scores,
+        coordinates: elevator.coordinates,
       },
     });
   }

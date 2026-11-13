@@ -3,10 +3,9 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  "defaultElevators": [
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "photos": [""], "scores": [8, 10, 7, 6, 9, 7], "coordinates": [21.2974836537678, -157.816165798719]},
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Left", "photos": ["POST-elevator-left-exterior.jpg", "POST-elevator-left-interior.jpg"], "scores": [6.5, 5.5, 7, 4, 7, 7], "coordinates": [21.2975067199529, -157.816460360522]},
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Right", "photos": ["POST-elevator-right-exterior.jpg", "POST-elevator-right-interior.jpg"], "scores": [6.5, 5.5, 7, 4, 7, 7], "coordinates": [21.2975314959406, -157.816461215438]}
   ]
 }
