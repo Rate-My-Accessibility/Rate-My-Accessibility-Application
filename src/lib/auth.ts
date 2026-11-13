@@ -21,7 +21,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // Type guard for credentials
+        // Validate credentials
         if (
           !credentials ||
           typeof credentials.email !== 'string' ||
@@ -29,11 +29,36 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         ) {
           return null;
         }
-        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
-        if (!user || typeof user.password !== 'string') return null;
-        const isValid = await bcrypt.compare(credentials.password, user.password);
-        if (!isValid) return null;
-        // Return user object for session
+
+        const email = credentials.email.trim().toLowerCase();
+
+        // Only allow @hawaii.edu email addresses
+        const emailRegex = /^[^\s@]+@hawaii\.edu$/;
+
+        if (!emailRegex.test(email)) {
+          return null;
+        }
+
+        // Find user in database
+        const user = await prisma.user.findUnique({
+          where: { email },
+        });
+
+        if (!user || typeof user.password !== 'string') {
+          return null;
+        }
+
+        // Verify password
+        const isValid = await bcrypt.compare(
+          credentials.password,
+          user.password,
+        );
+
+        if (!isValid) {
+          return null;
+        }
+
+        // Return authenticated user
         return {
           id: user.id.toString(),
           email: user.email,

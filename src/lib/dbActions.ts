@@ -69,11 +69,27 @@ export async function deleteStuff(id: number) {
  * @param credentials, an object with the following properties: email, password.
  */
 export async function createUser(credentials: { email: string; password: string }) {
-  // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
+  // Normalize the email
+  if (typeof credentials.email !== 'string') {
+    throw new Error('Invalid email address.');
+  }
+
+  const email = credentials.email.trim().toLowerCase();
+
+  // Verify that the email belongs to hawaii.edu
+  const emailRegex = /^[^\s@]+@hawaii\.edu$/;
+
+  if (!emailRegex.test(email)) {
+    throw new Error('Only @hawaii.edu email addresses are allowed.');
+  }
+
+  // Hash password
   const password = await hash(credentials.password, 10);
+
+  // Create user only if validation passes
   await prisma.user.create({
     data: {
-      email: credentials.email,
+      email,
       password,
     },
   });
