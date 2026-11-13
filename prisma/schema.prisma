@@ -22,6 +22,7 @@ model User {
   email    String @unique
   password String
   role     Role   @default(USER)
+  elevatorRatings ElevatorRating[]
 }
 
 // NOTE: Prisma does not support composite types on Postgres.
@@ -34,4 +35,14 @@ model Elevator {
   // order: [speed, size, availability, crowding, reliability, cleanliness]
   scores          Float[]
   coordinates     Float[]
+  elevatorRatings ElevatorRating[]
+}
+
+model ElevatorRating {
+  id        Int    @id @default(autoincrement())
+  elevator  Elevator @relation(fields: [elevatorId], references: [id])
+  elevatorId Int
+  user      User   @relation(fields: [userId], references: [id])
+  userId    Int
+  scores    Float[]
 }
