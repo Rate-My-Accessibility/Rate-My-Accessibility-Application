@@ -44,4 +44,6 @@ model ElevatorRating {
   user          String
   scores        Float[]
   text          String
+
+  @@unique([elevatorName, user])
 }

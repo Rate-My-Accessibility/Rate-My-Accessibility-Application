@@ -36,6 +36,21 @@ async function main() {
       },
     });
   }
+  for (const rating of config.defaultElevatorRatings) {
+    console.log(`  Adding rating for elevator "${rating.elevatorName}" by "${rating.user}".`);
+    await prisma.elevatorRating.upsert({
+      where: { 
+        elevatorName_user: { elevatorName: rating.elevatorName, user: rating.user }
+       },
+      update: {},
+      create: {
+        elevatorName: rating.elevatorName,
+        user: rating.user,
+        scores: rating.scores,
+        text: rating.text,
+      },
+    });
+  }
 }
 main()
   .then(() => prisma.$disconnect())
