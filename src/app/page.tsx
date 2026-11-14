@@ -10,11 +10,11 @@ const Home = () => (
           <h5>Sign in to view and rate your campus&apos;s  </h5>
           <h5>Accessibility features</h5>
           <div className="d-flex justify-content-center flex-wrap gap-3 mt-4">
-            <Button href="/auth/signin" variant="primary">
+            <Button href="/auth/signin" variant="primary" id="sign-in-button">
               Sign In
             </Button>
-            <Button href="/auth/signup" variant="outline-primary">
-              Sign Up
+            <Button href="/auth/signup" variant="outline-primary" id="sign-up-button">
+              Sign Up Now!
             </Button>
           </div>
         </Col>
