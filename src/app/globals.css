@@ -1,14 +1,191 @@
 html,
 body {
+  --bs-dark: var(--nat-navbar-bg);
   --bs-light-rgb: 236, 236, 236;
+  --bs-dark-rgb: var(--nat-navbar-bg-rgb);
   box-sizing: border-box;
   height: 100%;
   padding: 0;
   margin: 0;
+  background-size: cover;
+  background: fixed center url("/Test.png")
 }
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+body.wrapper > main {
+  flex: 1;
+}
+
+:root {
+  --nat-navbar-bg: rgb(0, 71, 48);
+  --nat-navbar-bg-color: #004730;
+  --nat-navbar-text-highlight: khaki;
+  --nat-navbar-highlight-text: var(--bs-gray-500);
+  --nat-navbar-highlight-bsg: lightblue;
+  --nat-navbar-bg-rgb: 0, 71, 48;
+  --nat-navbar-text-color: white;
+}
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
+.rockets-footer {
+  color: white;
+  background: var(--rockets-red);
+}
+
+.footer-top {
+  min-height: 350px;
+  padding: 60px 35px 45px;
+}
+
+.footer-columns {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.footer-columns > .col {
+  min-width: 0;
+}
+
+.footer-columns h2 {
+  margin-bottom: 28px;
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.footer-columns .nav-link {
+  padding: 5px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.footer-columns .nav-link:hover,
+.footer-bottom a:hover {
+  color: var(--rockets-yellow);
+  text-decoration: underline;
+}
+
+.footer-connect {
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+}
+
+.footer-socials a {
+  color: black;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.footer-bottom {
+  min-height: 205px;
+  padding: 45px 0 35px;
+  background: rgb(0, 71, 48);
+  border-top: 1px solid rgb(0, 71, 48);
+  font-size: 13px;
+}
+
+.footer-bottom p {
+  margin-bottom: 10px;
+}
+
+.footer-bottom a {
+  color: black;
+}
+
+/* SPONSOR STRIP */
+
+.sponsors {
+  min-height: 135px;
+  padding: 20px 0;
+  color: black;
+  background: #050505;
+}
+
+.sponsor-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 35px;
+  min-height: 95px;
+}
+
+.sponsor-toyota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 22px;
+}
+
+.toyota-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 55px;
+  color: #ed1c24;
+  background: black;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.memorial-logo {
+  font-family: Georgia, serif;
+  font-size: clamp(17px, 2vw, 32px);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.sportstalk-logo {
+  padding: 8px 20px;
+  border: 3px solid black;
+  border-radius: 50%;
+  font-size: clamp(14px, 1.5vw, 24px);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.sportstalk-logo span {
+  padding: 5px;
+  color: #111;
+  background: black;
+  border-radius: 50%;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.space-city-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(20px, 2vw, 34px);
+  font-style: italic;
+  font-weight: 1000;
+  white-space: nowrap;
+}
+
+.space-city-logo small {
+  color: var(--rockets-yellow);
+  font-size: 11px;
 }
