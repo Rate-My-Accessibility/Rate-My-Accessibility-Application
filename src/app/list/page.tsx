@@ -25,13 +25,14 @@ const ListPage = async () => {
       <Container id="list" fluid className="py-3">
         <Row>
           <Col>
-            <h1>Stuff</h1>
+            <h1>Suggestions</h1>
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Condition</th>
+                  <th>Building Name</th>
+                  <th>Location</th>
+                  <th>Feature</th>
+                  <th>Amount</th>
                   <th>Actions</th>
                 </tr>
               </thead>

@@ -1,6 +1,6 @@
 'use server';
 
-import { Condition } from '@prisma/client';
+import { Feature } from '@prisma/client';
 import { Stuff } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
@@ -10,22 +10,23 @@ import { prisma } from './prisma';
  * Adds a new stuff to the database.
  * @param stuff, an object with the following properties: name, quantity, owner, condition.
  */
-export async function addStuff(stuff: { name: string; quantity: number; owner: string; condition: string }) {
+export async function addStuff(stuff: { name: string; quantity: number; owner: string; feature: string, location: string }) {
   // console.log(`addStuff data: ${JSON.stringify(stuff, null, 2)}`);
-  let condition: Condition = 'good';
-  if (stuff.condition === 'poor') {
-    condition = 'poor';
-  } else if (stuff.condition === 'excellent') {
-    condition = 'excellent';
+  let feature: Feature = 'elevator';
+  if (stuff.feature === 'ramp') {
+    feature = 'ramp';
+  } else if (stuff.feature === 'stair') {
+    feature = 'stair';
   } else {
-    condition = 'fair';
+    feature = 'other';
   }
   await prisma.stuff.create({
     data: {
       name: stuff.name,
       quantity: stuff.quantity,
       owner: stuff.owner,
-      condition,
+      location: stuff.location,
+      feature,
     },
   });
   // After adding, redirect to the list page
@@ -36,15 +37,15 @@ export async function addStuff(stuff: { name: string; quantity: number; owner: s
  * Edits an existing stuff in the database.
  * @param stuff, an object with the following properties: id, name, quantity, owner, condition.
  */
-export async function editStuff(stuff: Stuff) {
+export async function editStuff(data: Stuff) {
   // console.log(`editStuff data: ${JSON.stringify(stuff, null, 2)}`);
   await prisma.stuff.update({
-    where: { id: stuff.id },
+    where: { id: data.id },
     data: {
-      name: stuff.name,
-      quantity: stuff.quantity,
-      owner: stuff.owner,
-      condition: stuff.condition,
+      name: data.name,
+      location: data.location,
+      feature: data.feature,
+      quantity: data.quantity,
     },
   });
   // After updating, redirect to the list page

@@ -3,9 +3,9 @@ import { Stuff } from '@prisma/client';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@/lib/auth';
-import EditStuffForm from '@/components/EditStuffForm';
+import EditStuffForm from '@/components/EditSuggestion';
 
-export default async function EditStuffPage({ params }: { params: { id: string | string[] } }) {
+export default async function EditSuggestion({ params }: { params: { id: string | string[] } }) {
   const { id } = await params;
   // Protect the page, only logged in users can access it.
   const session = await auth();

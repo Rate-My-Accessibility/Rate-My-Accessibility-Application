@@ -24,17 +24,18 @@ model User {
   role     Role   @default(USER)
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+enum Feature {
+  elevator
+  stair
+  ramp
+  other
 }
 
 model Stuff {
   id        Int       @id @default(autoincrement())
   name      String
+  location  String @default("Unknown")
   quantity  Int
-  condition Condition @default(good)
+  feature Feature @default(other)
   owner     String
 }

@@ -1,6 +1,6 @@
 import { loggedInProtectedPage } from '@/lib/page-protection';
-import AddStuffForm from '@/components/AddStuffForm';
 import { auth } from '@/lib/auth';
+import AddSuggestion from '@/components/AddSuggestion';
 
 const AddStuff = async () => {
   // Protect the page, only logged in users can access it.
@@ -12,7 +12,7 @@ const AddStuff = async () => {
   );
   return (
     <main>
-      <AddStuffForm />
+      <AddSuggestion />
     </main>
   );
 };
