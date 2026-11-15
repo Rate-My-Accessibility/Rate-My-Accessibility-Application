@@ -24,17 +24,26 @@ model User {
   role     Role   @default(USER)
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+// NOTE: Prisma does not support composite types on Postgres.
+// CURRENT SOLUTION: Use an array instead and handle the structure in our TypeScript.
+
+model Elevator {
+  id              Int           @id @default(autoincrement())
+  name            String        @unique
+  photos          String[]
+  // order: [speed, size, availability, crowding, reliability, cleanliness]
+  scores          Float[]
+  coordinates     Float[]
+  elevatorRatings ElevatorRating[]
 }
 
-model Stuff {
-  id        Int       @id @default(autoincrement())
-  name      String
-  quantity  Int
-  condition Condition @default(good)
-  owner     String
+model ElevatorRating {
+  id            Int    @id @default(autoincrement())
+  elevator      Elevator @relation(fields: [elevatorName], references: [name])
+  elevatorName  String
+  user          String
+  scores        Float[]
+  text          String
+
+  @@unique([elevatorName, user])
 }

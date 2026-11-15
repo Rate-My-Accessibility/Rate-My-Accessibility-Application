@@ -1,4 +1,4 @@
-import { PrismaClient, Role, Condition } from '@prisma/client';
+import { PrismaClient, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Seeding the database');
   const password = await hash('changeme', 10);
-  config.defaultAccounts.forEach(async (account) => {
+  for (const account of config.defaultAccounts) {
     const role = account.role as Role || Role.USER;
     console.log(`  Creating user: ${account.email} with role: ${role}`);
     await prisma.user.upsert({
@@ -21,19 +21,32 @@ async function main() {
         role,
       },
     });
-    // console.log(`  Created user: ${user.email} with role: ${user.role}`);
-  });
-  for (const data of config.defaultData) {
-    const condition = data.condition as Condition || Condition.good;
-    console.log(`  Adding stuff: ${JSON.stringify(data)}`);
-    await prisma.stuff.upsert({
-      where: { id: config.defaultData.indexOf(data) + 1 },
+  }
+  for (const elevator of config.defaultElevators) {
+    console.log(`  Adding elevator: ${elevator.name}`);
+    await prisma.elevator.upsert({
+      where: { id: config.defaultElevators.indexOf(elevator) + 1 },
       update: {},
       create: {
-        name: data.name,
-        quantity: data.quantity,
-        owner: data.owner,
-        condition,
+        name: elevator.name,
+        photos: elevator.photos,
+        scores: elevator.scores,
+        coordinates: elevator.coordinates,
+      },
+    });
+  }
+  for (const rating of config.defaultElevatorRatings) {
+    console.log(`  Adding rating for elevator "${rating.elevatorName}" by "${rating.user}".`);
+    await prisma.elevatorRating.upsert({
+      where: { 
+        elevatorName_user: { elevatorName: rating.elevatorName, user: rating.user }
+       },
+      update: {},
+      create: {
+        elevatorName: rating.elevatorName,
+        user: rating.user,
+        scores: rating.scores,
+        text: rating.text,
       },
     });
   }
