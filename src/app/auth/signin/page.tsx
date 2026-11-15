@@ -20,6 +20,8 @@ const SignIn = () => {
     });
   };
 
+
+
   return (
     <main>
       <Container>
@@ -43,7 +45,7 @@ const SignIn = () => {
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Don&apos;t have an account?
+                Don&apos;t have an account? 
                 <a href="/auth/signup">Sign up</a>
               </Card.Footer>
             </Card>
