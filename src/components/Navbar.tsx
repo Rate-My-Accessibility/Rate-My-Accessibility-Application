@@ -14,7 +14,9 @@ const NavBar: React.FC = () => {
   return (
    <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Rate My Accessibility</Navbar.Brand>
+        <Navbar.Brand href={currentUser ? '/home' : '/'}>
+  Rate My Accessibility
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">

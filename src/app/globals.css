@@ -192,5 +192,22 @@ body .navbar {
 
 #sign-in-button {
 
-  
+  background-color: rgb(0, 71, 48);
+  color: white;
+}
+
+#sign-up-button {
+
+  background-color: rgb(0, 71, 48);
+  color: white;
+}
+
+#sign-in-button:hover {
+
+text-decoration: underline;
+}
+
+#sign-up-button:hover {
+
+text-decoration: underline;
 }
