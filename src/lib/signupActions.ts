@@ -60,6 +60,8 @@ export async function requestSignupCode(input: unknown) {
     return { ok: false as const, error: 'Email verification is currently unavailable.' };
   }
 
+  const resend = new Resend(apiKey);
+
   const id = randomUUID();
   const code = randomInt(0, 1_000_000).toString().padStart(6, '0');
 
@@ -140,7 +142,7 @@ export async function requestSignupCode(input: unknown) {
 
   return {
     ok: false as const,
-    error: 'Could not send the code. Wait 60 seconds and try again.',
+    error: 'Could not send the code. Wait 60 seconds and try again!',
   };
 }
 

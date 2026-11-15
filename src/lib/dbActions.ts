@@ -2,7 +2,7 @@
 
 import { Condition } from '@prisma/client';
 import { Stuff } from '@prisma/client';
-import { hash } from 'bcrypt';
+import { compare, hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { auth } from './auth';
 import { prisma } from './prisma';
