@@ -1,92 +1,59 @@
-
 import NextAuth, { type DefaultSession } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
-import { prisma } from './prisma';
 import bcrypt from 'bcrypt';
+import { prisma } from './prisma';
+import { HawaiiEmailSchema } from './validationSchemas';
 
 declare module 'next-auth' {
   interface Session {
-    user: {
-      role?: string;
-    } & DefaultSession['user'];
+    user: { role?: string } & DefaultSession['user'];
+  }
+  interface User {
+    role?: string;
   }
 }
 
-// Export v5 handlers and helpers
 export const { auth, signIn, signOut, handlers } = NextAuth({
+  session: { strategy: 'jwt' },
   providers: [
     Credentials({
       credentials: {
-        email: { label: 'Email', type: 'email', placeholder: 'john@foo.com' },
+        email: { label: 'Email', type: 'email', placeholder: 'you@hawaii.edu' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // Validate credentials
         if (
           !credentials ||
           typeof credentials.email !== 'string' ||
-          typeof credentials.password !== 'string'
-        ) {
+          typeof credentials.password !== 'string' ||
+          credentials.password.length > 1024
+        ) return null;
+
+        let email: string;
+        try {
+          email = await HawaiiEmailSchema.validate(credentials.email);
+        } catch {
           return null;
         }
 
-        const email = credentials.email.trim().toLowerCase();
+        const user = await prisma.user.findUnique({ where: { email } });
+        if (!user || !user.emailVerified || typeof user.password !== 'string') return null;
+        if (!(await bcrypt.compare(credentials.password, user.password))) return null;
 
-        // Only allow @hawaii.edu email addresses
-        const emailRegex = /^[^\s@]+@hawaii\.edu$/;
-
-        if (!emailRegex.test(email)) {
-          return null;
-        }
-
-        // Find user in database
-        const user = await prisma.user.findUnique({
-          where: { email },
-        });
-
-        if (!user || typeof user.password !== 'string') {
-          return null;
-        }
-
-        // Verify password
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user.password,
-        );
-
-        if (!isValid) {
-          return null;
-        }
-
-        // Return authenticated user
-        return {
-          id: user.id.toString(),
-          email: user.email,
-          name: user.email,
-          role: user.role,
-        };
+        return { id: String(user.id), email: user.email, name: user.email, role: user.role };
       },
     }),
   ],
-  pages: {
-    signIn: '/auth/signin',
-    signOut: '/auth/signout',
-  },
+  pages: { signIn: '/auth/signin', signOut: '/auth/signout' },
   callbacks: {
     session({ session, token }) {
       return {
         ...session,
-        user: {
-          ...session.user,
-          role: (token as { role?: string }).role,
-        },
+        user: { ...session.user, role: typeof token.role === 'string' ? token.role : undefined },
       };
     },
     jwt({ token, user }) {
-      // user is type: { id?: string; email?: string; name?: string; role?: string }
-      if (user && typeof (user as { role?: string }).role === 'string') {
-        token.role = (user as { role?: string }).role;
-      }
+      if (user) token.role = user.role;
       return token;
     },
   },
