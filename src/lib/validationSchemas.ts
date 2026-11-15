@@ -1,5 +1,11 @@
 import * as Yup from 'yup';
 
+export const AddReviewSchema = Yup.object({
+  name: Yup.string().required(),
+  content: Yup.string().required(),
+  owner: Yup.string().required(),
+});
+
 export const AddStuffSchema = Yup.object({
   name: Yup.string().required(),
   quantity: Yup.number().positive().required(),

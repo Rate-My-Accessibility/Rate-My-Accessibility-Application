@@ -38,3 +38,11 @@ model Stuff {
   condition Condition @default(good)
   owner     String
 }
+
+model Review {
+  id            Int @id @default(autoincrement())
+  name          String
+  content       String
+  createdAt     DateTime @default(now())
+  owner         String
+}
