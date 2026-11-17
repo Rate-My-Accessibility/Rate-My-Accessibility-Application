@@ -14,20 +14,20 @@ const LandingPage = () => (
           <h5>Sign in to view and rate your campus&apos;s  </h5>
           <h5>Accessibility features</h5>
           <div className="d-flex justify-content-center flex-wrap gap-3 mt-4">
-            <Button href="/auth/signin" variant="rounded-circle" id="sign-in-button">
+            <Button href="/auth/signin" id="sign-in-button">
               Sign In
             </Button>
-            <Button href="/auth/signup" variant="rounded-circle" id="sign-up-button">
+            <Button href="/auth/signup" id="sign-up-button">
               Sign Up Now!
             </Button>
           </div>
         </Col>
       </Row>
-      <Row style={{ marginTop: '300px' }} className="justify-content-center text-center">
+      <Row style={{ marginTop: '300px', backgroundColor: 'rgb(0, 71, 48)',  }} className="justify-content-center text-center text-white py-5">
         <Col>
-
-        <h1><strong>JOIN THE RMA FAMILY NOW!</strong></h1>
-        <h2>Love RMA? Let's Make It Official</h2>
+        
+        <h1><strong>Think The Campus Can Be Improved?</strong></h1>
+        <h2>Make Your Voice Heard!</h2>
 
         </Col>
 </Row>
