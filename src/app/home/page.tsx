@@ -7,7 +7,7 @@ const Home = () => (
       <Row className="justify-content-center text-center">
         <Col xs={12}>
           <h1> Rate My Accessibility</h1>
-          <h5>Sign in to view and rate your campus&apos;s  </h5>
+          <h5>Welcome to the Rating Page</h5>
           <h5>Accessibility features</h5>
          
         </Col>

@@ -19,11 +19,7 @@ const LandingPage = () => (
           </div>
         </Col>
       </Row>
-         <Stack gap={1}>
-        <div>First line of text</div>
-        <div>Second line of text</div>
-        <div>Third line of text</div>
-      </Stack>
+        
     </Container>
   </main>
 );
