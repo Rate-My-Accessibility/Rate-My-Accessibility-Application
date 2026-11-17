@@ -2,8 +2,12 @@ import { Button, Col, Container, Row, Stack } from 'react-bootstrap';
 
 /** The Home page. */
 const LandingPage = () => (
-  <main className="d-flex flex-grow-1 align-items-center">
-    <Container id="landing-page" fluid className="py-3">
+  <main className="d-flex flex-grow-1 align-items-start">
+    <Container
+  id="landing-page"
+  fluid
+  style={{ paddingTop: '150px' }}
+>
       <Row className="justify-content-center text-center">
         <Col xs={12}>
           <h1> Rate My Accessibility</h1>
@@ -19,7 +23,24 @@ const LandingPage = () => (
           </div>
         </Col>
       </Row>
-        
+      <Row style={{ marginTop: '300px' }} className="justify-content-center text-center">
+        <Col>
+
+        <h1><strong>JOIN THE RMA FAMILY NOW!</strong></h1>
+        <h2>Love RMA? Let's Make It Official</h2>
+
+        </Col>
+</Row>
+
+<Row style={{ marginTop: '200px' }}>
+  <Col>Test</Col>
+</Row>
+
+<Row style={{ marginTop: '200px' }}>
+  <Col>Test</Col>
+</Row>
+    
+     
     </Container>
   </main>
 );
