@@ -1,50 +1,70 @@
 'use client';
 
-import { signIn } from 'next-auth/react'; // v5 compatible
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { useState, type FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
+import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
-/** The sign in page. */
 const SignIn = () => {
-  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
-    };
-    const email = target.email.value;
-    const password = target.password.value;
-    await signIn('credentials', {
-      callbackUrl: '/list',
-      email,
-      password,
-    });
+  const router = useRouter();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (busy) return;
+    const data = new FormData(event.currentTarget);
+    const email = String(data.get('email') ?? '').trim().toLowerCase();
+    const password = String(data.get('password') ?? '');
+    setBusy(true);
+    setError('');
+    try {
+      const result = await signIn('credentials', { email, password, redirect: false });
+      if (!result || result.error) {
+        setError('Sign-in failed. Check your email and password, and verify your email before signing in.');
+        return;
+      }
+      router.push('/list');
+      router.refresh();
+    } catch {
+      setError('Could not sign in. Please try again.');
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
     <main>
       <Container>
         <Row className="justify-content-center">
-          <Col xs={5}>
+          <Col xs={12} md={8} lg={5}>
             <h1 className="text-center">Sign In</h1>
             <Card>
               <Card.Body>
+                {error && <Alert variant="danger" role="alert">{error}</Alert>}
                 <Form method="post" onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <input name="email" type="text" className="form-control" />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <input name="password" type="password" className="form-control" />
-                  </Form.Group>
-                  <Button type="submit" className="mt-3">
-                    Signin
-                  </Button>
+                  <fieldset disabled={busy}>
+                    <Form.Group className="mb-3" controlId="signin-email">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        placeholder="you@hawaii.edu"
+                        required
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="signin-password">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control name="password" type="password" autoComplete="current-password" required />
+                    </Form.Group>
+                    <Button type="submit">{busy ? 'Signing in…' : 'Sign in'}</Button>
+                  </fieldset>
                 </Form>
               </Card.Body>
               <Card.Footer>
-                Don&apos;t have an account?
-                <a href="/auth/signup">Sign up</a>
+                <div>Don&apos;t have an account? <a href="/auth/signup">Sign up</a></div>
+                <div>Already registered but unverified? <a href="/auth/signup">Verify your email</a></div>
               </Card.Footer>
             </Card>
           </Col>

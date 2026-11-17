@@ -1,12 +1,21 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "admin@hawaii.edu", "password": "changeme", "role": "ADMIN", "emailVerified": "2026-11-17T00:00:00.000Z" },
+    { "email": "student@hawaii.edu", "password": "changeme", "emailVerified": "2026-11-17T00:00:00.000Z" }
   ],
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  "defaultElevators": [
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "photos": [""], "scores": [], "coordinates": [21.2974836537678, -157.816165798719]},
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Left", "photos": ["POST-elevator-left-exterior.jpg", "POST-elevator-left-interior.jpg"], "scores": [], "coordinates": [21.2975067199529, -157.816460360522]},
+    {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Right", "photos": ["POST-elevator-right-exterior.jpg", "POST-elevator-right-interior.jpg"], "scores": [], "coordinates": [21.2975314959406, -157.816461215438]},
+    {"name": "PARKING STRUCTURE - Southwest", "photos": ["Parking-Elevator-Exterior.jpg", "Parking-Elevator-Interior.jpg"], "scores": [], "coordinates": [21.2953096395334, -157.818274769755]},
+    {"name": "HEMENWAY HALL", "photos": ["HemenwayHall-Elevator-Exterior.jpg", "HemenwayHall-Elevator-Interior.jpg"], "scores": [], "coordinates": [21.2985907606315, -157.819816673591]}
+  ],
+  "defaultElevatorRatings": [
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "user": "admin@hawaii.edu", "scores": [8, 10, 7, 6, 9, 7], "text": "Useful elevator, but a little bit out of sight. Large groups can occasionally get in the way during peak hours."},
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Left", "user": "admin@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Small and often crowded. Feels slower than the freight elevator, but still convenient. The adjacent elevator can help distribute the load."},
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Right", "user": "admin@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Same as the left elevator - a bit slow, often crowded, but convenient.."},
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "user": "student@hawaii.edu", "scores": [8, 10, 7, 6, 9, 7], "text": "Great elevator, fast and clean. Plenty of space. Separate rear and front door controls can be confusing and prevent users from holding the door open."},
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Left", "user": "student@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Average elevator, could be more spacious and move faster."},
+    {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Right", "user": "student@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Average elevator, could be cleaner."}
   ]
 }

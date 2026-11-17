@@ -18,25 +18,37 @@ enum Role {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  role     Role   @default(USER)
+  id            Int       @id @default(autoincrement())
+  email         String    @unique
+  password      String
+  role          Role      @default(USER)
+  emailVerified DateTime?
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+model EmailVerificationToken {
+  email          String   @id
+  id             String   @unique @default(uuid())
+  tokenHash      String   @unique
+  expiresAt      DateTime
+  sentAt         DateTime @default(now())
+  attempts       Int      @default(0)
+  windowStartsAt DateTime @default(now())
+  sendCount      Int      @default(0)
+
+  @@index([expiresAt])
 }
 
-model Stuff {
-  id        Int       @id @default(autoincrement())
-  name      String
-  quantity  Int
-  condition Condition @default(good)
-  owner     String
+// NOTE: Prisma does not support composite types on Postgres.
+// CURRENT SOLUTION: Use an array instead and handle the structure in our TypeScript.
+
+model Elevator {
+  id              Int           @id @default(autoincrement())
+  name            String        @unique
+  photos          String[]
+  // order: [speed, size, availability, crowding, reliability, cleanliness]
+  scores          Float[]
+  coordinates     Float[]
+  elevatorRatings ElevatorRating[]
 }
 
 model Review {
@@ -45,4 +57,14 @@ model Review {
   content       String
   createdAt     DateTime @default(now())
   owner         String
+}
+model ElevatorRating {
+  id            Int    @id @default(autoincrement())
+  elevator      Elevator @relation(fields: [elevatorName], references: [name])
+  elevatorName  String
+  user          String
+  scores        Float[]
+  text          String
+
+  @@unique([elevatorName, user])
 }
