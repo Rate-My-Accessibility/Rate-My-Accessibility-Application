@@ -13,7 +13,9 @@ async function main() {
     const emailVerified = account.emailVerified
         ? new Date(account.emailVerified)
         : null;
-
+    if (emailVerified && Number.isNaN(emailVerified.getTime())) {
+      throw new Error(`Invalid verification date for ${account.email}`);
+    }
     await prisma.user.upsert({
       where: { email: account.email },
       update: {
@@ -28,7 +30,7 @@ async function main() {
       },
     });
   }
-  
+
   for (const elevator of config.defaultElevators) {
     console.log(`  Adding elevator: ${elevator.name}`);
     await prisma.elevator.upsert({

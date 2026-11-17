@@ -40,12 +40,37 @@ const ChangePassword = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = async (data: ChangePasswordForm) => {
-    // console.log(JSON.stringify(data, null, 2));
-    await changePassword({ email, ...data });
-    await swal('Password Changed', 'Your password has been changed', 'success', { timer: 2000 });
+const onSubmit = async (data: ChangePasswordForm) => {
+  if (!email) {
+    await swal('Sign in required', 'Please sign in first.', 'error');
+    return;
+  }
+
+  try {
+    await changePassword({
+      email,
+      currentPassword: data.oldpassword,
+      password: data.password,
+    });
+
+    await swal({
+      title: 'Password Changed',
+      text: 'Your password has been changed.',
+      icon: 'success',
+      timer: 2000,
+    });
+
     reset();
-  };
+  } catch (error) {
+    await swal(
+      'Password change failed',
+      error instanceof Error
+        ? error.message
+        : 'Could not change your password. Please try again.',
+      'error',
+    );
+  }
+};
 
   if (status === 'loading') {
     return <LoadingSpinner />;
