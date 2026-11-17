@@ -8,6 +8,16 @@ import { auth } from './auth';
 import { prisma } from './prisma';
 import { HawaiiEmailSchema, PasswordSchema } from './validationSchemas';
 
+export async function addReview(review : { name: string; content: string; owner: string;}) { 
+  await prisma.review.create({
+    data: {
+      name: review.name,
+      content: review.content,
+      owner: review.owner,
+    },
+  });
+}
+
 /**
  * Adds a new stuff to the database.
  * @param stuff, an object with the following properties: name, quantity, owner, condition.
@@ -31,7 +41,7 @@ export async function addStuff(stuff: { name: string; quantity: number; owner: s
     },
   });
   // After adding, redirect to the list page
-  redirect('/list');
+  redirect('/add');
 }
 
 /**
