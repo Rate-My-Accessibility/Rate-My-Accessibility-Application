@@ -4,18 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "dev": "next dev",
-  "build": "prisma generate && next build",
-  "start": "next start",
-  "lint": "eslint",
-  "seed": "npx tsx src/seed.ts",
-  "playwright": "npx playwright test",
-  "postinstall": "prisma generate"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "seed": "npx tsx src/seed.ts",
+    "playwright": "npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.2",
+    "@react-email/render": "^2.3.1",
     "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.8",
     "dotenv": "^17.3.1",
@@ -27,6 +27,7 @@
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "19.2.3",
     "react-hook-form": "^7.71.2",
+    "resend": "^6.38.1",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.26.21",
     "ts-node": "^10.9.2",

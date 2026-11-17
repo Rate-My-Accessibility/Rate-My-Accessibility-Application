@@ -1,7 +1,7 @@
 {
   "defaultAccounts": [
-    { "email": "admin@hawaii.edu", "password": "changeme", "role": "ADMIN" },
-    { "email": "student@hawaii.edu", "password": "changeme" }
+    { "email": "admin@hawaii.edu", "password": "changeme", "role": "ADMIN", "emailVerified": "2026-11-17T00:00:00.000Z" },
+    { "email": "student@hawaii.edu", "password": "changeme", "emailVerified": "2026-11-17T00:00:00.000Z" }
   ],
   "defaultElevators": [
     {"name": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "photos": [""], "scores": [], "coordinates": [21.2974836537678, -157.816165798719]},

@@ -10,18 +10,27 @@ async function main() {
   for (const account of config.defaultAccounts) {
     const role = account.role as Role || Role.USER;
     console.log(`  Creating user: ${account.email} with role: ${role}`);
+    const emailVerified = account.emailVerified
+        ? new Date(account.emailVerified)
+        : null;
+    if (emailVerified && Number.isNaN(emailVerified.getTime())) {
+      throw new Error(`Invalid verification date for ${account.email}`);
+    }
     await prisma.user.upsert({
       where: { email: account.email },
       update: {
         password,
+        emailVerified,
       },
       create: {
         email: account.email,
         password,
         role,
+        emailVerified,
       },
     });
   }
+
   for (const elevator of config.defaultElevators) {
     console.log(`  Adding elevator: ${elevator.name}`);
     await prisma.elevator.upsert({
