@@ -51,6 +51,13 @@ model Elevator {
   elevatorRatings ElevatorRating[]
 }
 
+model Review {
+  id            Int @id @default(autoincrement())
+  name          String
+  content       String
+  createdAt     DateTime @default(now())
+  owner         String
+}
 model ElevatorRating {
   id            Int    @id @default(autoincrement())
   elevator      Elevator @relation(fields: [elevatorName], references: [name])

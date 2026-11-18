@@ -2,7 +2,7 @@
 
 import { useSession } from 'next-auth/react'; // v5 compatible
 import { usePathname } from 'next/navigation';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -11,12 +11,13 @@ const NavBar: React.FC = () => {
   if (status === 'loading') return null;
   const currentUser = session?.user?.email;
   const role = session?.user?.role;
-  return (
+  return (  
    <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href={currentUser ? '/home' : '/'}>
-  Rate My Accessibility
-</Navbar.Brand>
+        <Image src="/website_logo2.png" alt="Logo" width="50" height="50" className="d-inline-block align-top" />
+
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
@@ -29,10 +30,10 @@ const NavBar: React.FC = () => {
                   List Contacts |
                 </Nav.Link>
                   <Nav.Link id="list-stuff-nav" href="/list" active={pathName === '/list'}>
-                  Stuff |
+                 Add a Review |
                 </Nav.Link>
                   <Nav.Link id="list-stuff-nav" href="/list" active={pathName === '/list'}>
-                  Stuff |
+                  Browse All Reviews 
                 </Nav.Link>
               </>
             )}
