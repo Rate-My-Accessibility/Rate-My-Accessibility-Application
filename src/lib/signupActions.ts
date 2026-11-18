@@ -148,9 +148,21 @@ export async function requestSignupCode(input: unknown) {
 
     // The code is only sent by email. Never return it or log it.
     return { ok: true as const, verificationId: id, email };
-  } catch {
-    console.error('Verification code request failed.');
-    return { ok: false as const, error: 'Could not request a code. Please try again.' };
+  } catch (error) {
+  console.error('Verification code request failed:', {
+    name: error instanceof Error ? error.name : 'Unknown',
+    message: error instanceof Error
+      ? error.message
+      : 'Unknown error',
+    code: error instanceof Prisma.PrismaClientKnownRequestError
+      ? error.code
+      : undefined,
+  });
+
+  return {
+    ok: false as const,
+    error: 'Could not request a code. Please try again.',
+  };
   }
 }
 
