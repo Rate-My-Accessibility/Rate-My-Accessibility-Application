@@ -18,8 +18,6 @@ export async function addReview(review : { name: string; content: string; owner:
 
 
 
-// createUser was removed. Account creation must go through verifySignupCode.
-
 /** Authenticated password change, not a forgot-password/reset endpoint. */
 export async function changePassword(credentials: {
   email: string;
