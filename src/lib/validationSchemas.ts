@@ -1,5 +1,11 @@
 import * as Yup from 'yup';
 
+export const AddPhotoSchema = Yup.object({
+  source: Yup.mixed<FileList>().optional(),
+  reviewId: Yup.number().required(),
+});
+
+
 export const AddReviewSchema = Yup.object({
   name: Yup.string().required(),
   content: Yup.string().required(),

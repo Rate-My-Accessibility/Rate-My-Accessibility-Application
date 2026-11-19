@@ -6,9 +6,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
 import { redirect } from 'next/navigation';
-import { addReview } from '@/lib/dbActions';
+import { addReview, addPhoto } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
-import { AddReviewSchema } from '@/lib/validationSchemas';
+import { AddReviewSchema, AddPhotoSchema } from '@/lib/validationSchemas';
+import { uploadImage } from '@/actions/uploadImage';
 
 
 
@@ -16,20 +17,9 @@ type AddReviewFormProps = {
   onCancel: () => void;
 };
 
-
+const CombinedSchema = AddReviewSchema.concat(AddPhotoSchema.omit(['reviewId']));
 
 const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
-  const onSubmit = async (data: { name: string; content: string; owner: string }) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
-  await addReview(data);
-  swal('Success', 'Your item has been added', 'success', {
-    timer: 1000,
-    buttons: [false],
-  });
-
-  onCancel();
-  };
-
   const { data: session, status } = useSession();
   // console.log('AddStuffForm', status, session);
   const currentUser = session?.user?.email || '';
@@ -38,7 +28,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(AddReviewSchema),
+    resolver: yupResolver(CombinedSchema),
   });
   if (status === 'loading') {
     return <LoadingSpinner />;
@@ -46,6 +36,49 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
   if (status === 'unauthenticated') {
     redirect('/auth/signin');
   }
+  
+  const onSubmit = async (data: { name: string; content: string; owner: string; source?: FileList;}) => {
+  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
+    const review = await addReview({
+      name: data.name,
+      content: data.content,
+      owner: data.owner,
+    });
+
+    const files = Array.from(data.source ?? []);
+    const uploadedPhotos = await Promise.all(
+      files.map(async (file) => {
+        const formData = new FormData();
+        formData.append('image', file);
+
+        const result = await uploadImage(formData);
+        if ('error' in result) {
+          throw new Error(result.error);
+        }
+
+        return result.url;
+      })
+    );
+
+    await Promise.all(
+      uploadedPhotos.map((url) => 
+        addPhoto({
+          source: url,
+          reviewId: review.id,
+          owner: data.owner,
+        }),
+      ),
+    );
+
+    swal('Success', 'Your item has been added', 'success', {
+      timer: 1000,
+      buttons: [false],
+    });
+
+    onCancel();
+  };  
+
+
 
   return (
     <Container>
@@ -71,6 +104,18 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
                 className={`form-control ${errors.content ? 'is-invalid' : ''}`}
               />
               <div className="invalid-feedback">{errors.content?.message}</div>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Add Photos</Form.Label>
+              <input
+                id="photos"
+                type="file"
+                accept='image/*'
+                multiple
+                {...register('source')}
+                className={`form-control ${errors.source ? 'is-invalid' : ''}`}
+              />
+              <div className="invalid-feedback">{errors.source?.message}</div>
             </Form.Group>
             <input type="hidden" {...register('owner')} value={currentUser} />
             <Form.Group className="form-group">

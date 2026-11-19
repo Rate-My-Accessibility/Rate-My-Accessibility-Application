@@ -6,8 +6,18 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
+export async function addPhoto(photo : { source: string; reviewId: number; owner: string;}) { 
+  await prisma.photo.create({
+    data: {
+      source: photo.source,
+      reviewId: photo.reviewId,
+      owner: photo.owner,
+    },
+  });
+}
+
 export async function addReview(review : { name: string; content: string; owner: string;}) { 
-  await prisma.review.create({
+  return prisma.review.create({
     data: {
       name: review.name,
       content: review.content,

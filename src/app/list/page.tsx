@@ -22,6 +22,11 @@ const ListPage = async () => {
       createdAt: "desc",
     }
   });
+  const photos = await prisma.photo.findMany({
+    where: {
+      owner,
+    }
+  })
   // console.log(stuff);
   return (
     <main>
@@ -33,7 +38,8 @@ const ListPage = async () => {
               <Row xs={1} className="g-4">
                 {review.map((item) =>
                   <Col key={item.id}>
-                    <ReviewCard review={item}/>
+                    <ReviewCard review={item}
+                            photos={photos.filter(photo => (photo.reviewId === item.id))} />
                   </Col>
                 )}
               </Row>            

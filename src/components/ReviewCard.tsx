@@ -1,9 +1,9 @@
 'use client';
 
-import { Review } from '@prisma/client';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Review, Photo } from '@prisma/client';
+import { Card, Row, Col, Carousel, Image } from 'react-bootstrap';
 
-const ReviewCard = ({review} : { review : Review }) => (
+const ReviewCard = ({ review, photos } : { review : Review; photos: Photo[] }) => (
     <Card className='h-100'>
         <Card.Header>
             <Row>
@@ -16,6 +16,24 @@ const ReviewCard = ({review} : { review : Review }) => (
                 </Col>
             </Row>
         </Card.Header>
+        {(photos.length > 0) && (
+            <>
+            <Card.Body>
+                <Carousel interval={null} slide={false}>
+                    {photos.map((photo) => (
+                        <Carousel.Item key={photo.id}>
+                            <Image 
+                            src={photo.source} alt="" 
+                            className="d-block mx-auto" 
+                            style={{ maxHeight: 300, width: 'auto', maxWidth: '100%' }}
+                            />
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+            </Card.Body>
+            <hr className="mt-0"/>
+            </>
+        )}
         <Card.Body>
             <Card.Text>{review.content}</Card.Text>
         </Card.Body>

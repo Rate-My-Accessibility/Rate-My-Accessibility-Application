@@ -12,3 +12,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(100);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
