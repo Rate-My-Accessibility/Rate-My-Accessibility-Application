@@ -148,9 +148,29 @@ export async function requestSignupCode(input: unknown) {
 
     // The code is only sent by email. Never return it or log it.
     return { ok: true as const, verificationId: id, email };
-  } catch {
-    console.error('Verification code request failed.');
-    return { ok: false as const, error: 'Could not request a code. Please try again.' };
+  } catch (error) {
+  const err = error as {
+    name?: string;
+    code?: string;
+    message?: string;
+  };
+
+  console.error('Verification code request failed:', {
+    name: err?.name,
+    code: err?.code,
+    message: err?.message?.replace(
+      /postgres(?:ql)?:\/\/[^\s"']+/gi,
+      '[REDACTED_DATABASE_URL]',
+    ),
+    databaseConfigured: Boolean(process.env.DATABASE_URL),
+    emailSecretValid:
+      (process.env.EMAIL_CODE_SECRET?.length ?? 0) >= 32,
+  });
+
+  return {
+    ok: false as const,
+    error: 'Could not request a code. Please try again.',
+  };
   }
 }
 

@@ -1,72 +1,22 @@
 'use server';
 
-import { Condition } from '@prisma/client';
-import { Stuff } from '@prisma/client';
 import { compare, hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { auth } from './auth';
 import { prisma } from './prisma';
 import { HawaiiEmailSchema, PasswordSchema } from './validationSchemas';
 
-/**
- * Adds a new stuff to the database.
- * @param stuff, an object with the following properties: name, quantity, owner, condition.
- */
-export async function addStuff(stuff: { name: string; quantity: number; owner: string; condition: string }) {
-  // console.log(`addStuff data: ${JSON.stringify(stuff, null, 2)}`);
-  let condition: Condition = 'good';
-  if (stuff.condition === 'poor') {
-    condition = 'poor';
-  } else if (stuff.condition === 'excellent') {
-    condition = 'excellent';
-  } else {
-    condition = 'fair';
-  }
-  await prisma.stuff.create({
+export async function addReview(review : { name: string; content: string; owner: string;}) { 
+  await prisma.review.create({
     data: {
-      name: stuff.name,
-      quantity: stuff.quantity,
-      owner: stuff.owner,
-      condition,
+      name: review.name,
+      content: review.content,
+      owner: review.owner,
     },
   });
-  // After adding, redirect to the list page
-  redirect('/list');
 }
 
-/**
- * Edits an existing stuff in the database.
- * @param stuff, an object with the following properties: id, name, quantity, owner, condition.
- */
-export async function editStuff(stuff: Stuff) {
-  // console.log(`editStuff data: ${JSON.stringify(stuff, null, 2)}`);
-  await prisma.stuff.update({
-    where: { id: stuff.id },
-    data: {
-      name: stuff.name,
-      quantity: stuff.quantity,
-      owner: stuff.owner,
-      condition: stuff.condition,
-    },
-  });
-  // After updating, redirect to the list page
-  redirect('/list');
-}
 
-/**
- * Deletes an existing stuff from the database.
- * @param id, the id of the stuff to delete.
- */
-export async function deleteStuff(id: number) {
-  // console.log(`deleteStuff id: ${id}`);
-  await prisma.stuff.delete({
-    where: { id },
-  });
-  // After deleting, redirect to the list page
-  redirect('/list');
-}
-
-// createUser was removed. Account creation must go through verifySignupCode.
 
 /** Authenticated password change, not a forgot-password/reset endpoint. */
 export async function changePassword(credentials: {
