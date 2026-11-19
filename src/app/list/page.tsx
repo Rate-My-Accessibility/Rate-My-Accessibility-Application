@@ -8,13 +8,13 @@ import ElevatorCard from '@/components/ElevatorCard';
 /** Render a list of elevators for the logged in user. */
 const ListPage = async () => {
   // Protect the page, only logged in users can access it.
-  const session = await auth();
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; name: string };
-    } | null,
-  );
-  const owner = (session && session.user && session.user.email) || '';
+  // const session = await auth();
+  // loggedInProtectedPage(
+  //   session as {
+  //     user: { email: string; id: string; name: string };
+  //   } | null,
+  // );
+  //const owner = (session && session.user && session.user.email) || '';
   const elevators = await prisma.elevator.findMany({
     where: {}
   })

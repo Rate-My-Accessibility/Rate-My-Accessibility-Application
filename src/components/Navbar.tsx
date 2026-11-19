@@ -49,6 +49,13 @@ const NavBar: React.FC = () => {
               About Us
             </NavLink>
             <NavLink>Contact Us</NavLink>
+               <Nav.Link
+                  id="list-stuff-nav"
+                  href="/list"
+                  active={pathName === '/list'}
+                >
+                  Browse All Reviews
+                </Nav.Link>
             {currentUser && (
               <>
                 <Nav.Link
