@@ -24,8 +24,9 @@ const AdminPage = async () => {
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Condition</th>
+                  <th>Location</th>
+                  <th>Feature</th>
+                  <th>Amount</th>
                   <th>Owner</th>
                   <th>Actions</th>
                 </tr>

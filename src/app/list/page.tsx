@@ -13,7 +13,7 @@ const ListPage = async () => {
       user: { email: string; id: string; name: string };
     } | null,
   );
-  const owner = (session && session.user && session.user.email) || '';
+  const owner = session?.user!.email ? session.user.email : '';
   const stuff = await prisma.stuff.findMany({
     where: {
       owner,
