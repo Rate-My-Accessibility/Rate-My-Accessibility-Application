@@ -1,26 +1,7 @@
 'use client';
 
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { dynamicMapLayer } from 'esri-leaflet';
-import { useEffect } from 'react';
-
-function CampusOverlay() {
-  const map = useMap();
-
-  useEffect(() => {
-    const layer = dynamicMapLayer({
-      url: 'https://map.hawaii.edu/server/rest/services/OneMap_Public/MA_OneMapPublic/MapServer',
-      layers: [7003],
-    }).addTo(map);
-
-    return () => {
-      map.removeLayer(layer);
-    };
-  }, [map]);
-
-  return null;
-}
 
 export default function MapItem() {
   return (
@@ -35,7 +16,11 @@ export default function MapItem() {
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <CampusOverlay />
+      <Marker position={[21.2961010792494, -157.818195040728]}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
     </MapContainer>
   );
 }

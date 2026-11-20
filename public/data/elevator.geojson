@@ -1,0 +1,2245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814305062041, 21.2924422467232]
+      },
+      "properties": {
+        "OBJECTID": 1,
+        "NEW_BLDG": "HALE WAINANI G TOWER",
+        "BLDG_NO_": "1120B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814528967664, 21.2925292916483]
+      },
+      "properties": {
+        "OBJECTID": 2,
+        "NEW_BLDG": "HALE WAINANI I TOWER",
+        "BLDG_NO_": "1120D",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814544593894, 21.292512626268]
+      },
+      "properties": {
+        "OBJECTID": 3,
+        "NEW_BLDG": "HALE WAINANI I TOWER",
+        "BLDG_NO_": "1120D",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814367679428, 21.2929116367214]
+      },
+      "properties": {
+        "OBJECTID": 4,
+        "NEW_BLDG": "HALE WAINANI F TOWER",
+        "BLDG_NO_": "1120A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814352347772, 21.2929285083334]
+      },
+      "properties": {
+        "OBJECTID": 5,
+        "NEW_BLDG": "HALE WAINANI F TOWER",
+        "BLDG_NO_": "1120A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818016790759, 21.2932599161222]
+      },
+      "properties": {
+        "OBJECTID": 6,
+        "NEW_BLDG": "DUKE KAHANAMOKU AQUATIC COMPLEX (DKAC)",
+        "BLDG_NO_": "1113",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813695625816, 21.2935688646022]
+      },
+      "properties": {
+        "OBJECTID": 7,
+        "NEW_BLDG": "HALE NOELANI TOWER D",
+        "BLDG_NO_": "1123D",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81644295962, 21.2935486385966]
+      },
+      "properties": {
+        "OBJECTID": 8,
+        "NEW_BLDG": "LES MURAKAMI STADIUM",
+        "BLDG_NO_": "1115",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813273095516, 21.2939680073431]
+      },
+      "properties": {
+        "OBJECTID": 9,
+        "NEW_BLDG": "HALE ALOHA, LOKELANI TOWER",
+        "BLDG_NO_": "1122D",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813263669075, 21.2939911516484]
+      },
+      "properties": {
+        "OBJECTID": 10,
+        "NEW_BLDG": "HALE ALOHA, LOKELANI TOWER",
+        "BLDG_NO_": "1122D",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81268293739, 21.294036202691]
+      },
+      "properties": {
+        "OBJECTID": 11,
+        "NEW_BLDG": "HALE ALOHA, MOKIHANA TOWER",
+        "BLDG_NO_": "1122C",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.812693510502, 21.2940588959525]
+      },
+      "properties": {
+        "OBJECTID": 12,
+        "NEW_BLDG": "HALE ALOHA, MOKIHANA TOWER",
+        "BLDG_NO_": "1122C",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818537725082, 21.294110962128]
+      },
+      "properties": {
+        "OBJECTID": 13,
+        "NEW_BLDG": "STAN SHERIFF CENTER",
+        "BLDG_NO_": "1118",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818491476851, 21.2942517474732]
+      },
+      "properties": {
+        "OBJECTID": 14,
+        "NEW_BLDG": "STAN SHERIFF CENTER",
+        "BLDG_NO_": "1118",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.812699503776, 21.2946416715537]
+      },
+      "properties": {
+        "OBJECTID": 15,
+        "NEW_BLDG": "HALE ALOHA, ILIMA TOWER",
+        "BLDG_NO_": "1122A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818135797382, 21.2946869137705]
+      },
+      "properties": {
+        "OBJECTID": 16,
+        "NEW_BLDG": "PHYSICAL EDUCATION/ATHLETIC COMPLEX (HPER)",
+        "BLDG_NO_": "1110",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818160643262, 21.2946891407532]
+      },
+      "properties": {
+        "OBJECTID": 17,
+        "NEW_BLDG": "PHYSICAL EDUCATION/ATHLETIC COMPLEX (HPER)",
+        "BLDG_NO_": "1110",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.812710468325, 21.2946642686083]
+      },
+      "properties": {
+        "OBJECTID": 18,
+        "NEW_BLDG": "HALE ALOHA, ILIMA TOWER",
+        "BLDG_NO_": "1122A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813330761894, 21.294781341978]
+      },
+      "properties": {
+        "OBJECTID": 19,
+        "NEW_BLDG": "HALE ALOHA, LEHUA TOWER",
+        "BLDG_NO_": "1122B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813320944926, 21.2948053881252]
+      },
+      "properties": {
+        "OBJECTID": 20,
+        "NEW_BLDG": "HALE ALOHA, LEHUA TOWER",
+        "BLDG_NO_": "1122B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.812147579165, 21.294933004095]
+      },
+      "properties": {
+        "OBJECTID": 21,
+        "NEW_BLDG": "KAMAKAKUOKALANI CENTER FOR HAWAIIAN STUDIES",
+        "BLDG_NO_": "1131",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818274769755, 21.2953096395334]
+      },
+      "properties": {
+        "OBJECTID": 22,
+        "NEW_BLDG": "PARKING STRUCTURE",
+        "BLDG_NO_": "1001",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820295278655, 21.2955892559116]
+      },
+      "properties": {
+        "OBJECTID": 23,
+        "NEW_BLDG": "MUSIC COMPLEX PHASE 2 (1975)",
+        "BLDG_NO_": "1091",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813913799422, 21.2955694751485]
+      },
+      "properties": {
+        "OBJECTID": 24,
+        "NEW_BLDG": "FREAR HALL",
+        "BLDG_NO_": "1211",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 25,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814716476524, 21.2959711961605]
+      },
+      "properties": {
+        "OBJECTID": 25,
+        "NEW_BLDG": "GATEWAY HOUSE",
+        "BLDG_NO_": "1161",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 26,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81489888643, 21.2960036971869]
+      },
+      "properties": {
+        "OBJECTID": 26,
+        "NEW_BLDG": "GATEWAY HOUSE",
+        "BLDG_NO_": "1161",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 27,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818195040728, 21.2961010792494]
+      },
+      "properties": {
+        "OBJECTID": 27,
+        "NEW_BLDG": "PARKING STRUCTURE",
+        "BLDG_NO_": "1001",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 28,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818192684118, 21.2961256042947]
+      },
+      "properties": {
+        "OBJECTID": 28,
+        "NEW_BLDG": "PARKING STRUCTURE",
+        "BLDG_NO_": "1001",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 29,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819733690737, 21.2961656205891]
+      },
+      "properties": {
+        "OBJECTID": 29,
+        "NEW_BLDG": "PARKING STRUCTURE -PHASE II",
+        "BLDG_NO_": "1001A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 30,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819731313398, 21.2961899659027]
+      },
+      "properties": {
+        "OBJECTID": 30,
+        "NEW_BLDG": "PARKING STRUCTURE -PHASE II",
+        "BLDG_NO_": "1001A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 31,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818505313175, 21.2964362635295]
+      },
+      "properties": {
+        "OBJECTID": 31,
+        "NEW_BLDG": "LAW SCHOOL",
+        "BLDG_NO_": "1142",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 32,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814579383811, 21.2968410488025]
+      },
+      "properties": {
+        "OBJECTID": 32,
+        "NEW_BLDG": "JOHN A. BURNS HALL",
+        "BLDG_NO_": "1155",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 33,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814580219903, 21.29686751643]
+      },
+      "properties": {
+        "OBJECTID": 33,
+        "NEW_BLDG": "JOHN A. BURNS HALL",
+        "BLDG_NO_": "1155",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 34,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816408494038, 21.2970138817292]
+      },
+      "properties": {
+        "OBJECTID": 34,
+        "NEW_BLDG": "HOLMES HALL",
+        "BLDG_NO_": "1163",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 35,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.821865582073, 21.2970468852852]
+      },
+      "properties": {
+        "OBJECTID": 35,
+        "NEW_BLDG": "KHET TV (ETV PRODUCTION BUILDING)",
+        "BLDG_NO_": "1079",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 36,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815768951647, 21.2970358436383]
+      },
+      "properties": {
+        "OBJECTID": 36,
+        "NEW_BLDG": "HOLMES HALL",
+        "BLDG_NO_": "1163",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 37,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819898406765, 21.2971372166817]
+      },
+      "properties": {
+        "OBJECTID": 37,
+        "NEW_BLDG": "BACHMAN HALL",
+        "BLDG_NO_": "1107",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 38,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816165798719, 21.2974836537678]
+      },
+      "properties": {
+        "OBJECTID": 38,
+        "NEW_BLDG": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)",
+        "BLDG_NO_": "1162",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 39,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816460360522, 21.2975067199529]
+      },
+      "properties": {
+        "OBJECTID": 39,
+        "NEW_BLDG": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)",
+        "BLDG_NO_": "1162",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 40,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816461215438, 21.2975314959406]
+      },
+      "properties": {
+        "OBJECTID": 40,
+        "NEW_BLDG": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)",
+        "BLDG_NO_": "1162",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 41,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.817111241057, 21.2975698985318]
+      },
+      "properties": {
+        "OBJECTID": 41,
+        "NEW_BLDG": "SAKAMAKI HALL",
+        "BLDG_NO_": "1047",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 42,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.817086426724, 21.2975706166875]
+      },
+      "properties": {
+        "OBJECTID": 42,
+        "NEW_BLDG": "SAKAMAKI HALL",
+        "BLDG_NO_": "1047",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 43,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815788229402, 21.2979931693859]
+      },
+      "properties": {
+        "OBJECTID": 43,
+        "NEW_BLDG": "MARINE SCIENCES BUILDING",
+        "BLDG_NO_": "1098",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 44,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815759368955, 21.2979940807127]
+      },
+      "properties": {
+        "OBJECTID": 44,
+        "NEW_BLDG": "MARINE SCIENCES BUILDING",
+        "BLDG_NO_": "1098",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 45,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.817349664832, 21.2981205590794]
+      },
+      "properties": {
+        "OBJECTID": 45,
+        "NEW_BLDG": "KUYKENDALL HALL",
+        "BLDG_NO_": "1192",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 46,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816566140773, 21.2982157246267]
+      },
+      "properties": {
+        "OBJECTID": 46,
+        "NEW_BLDG": "HAWAII INSTITUTE OF GEOPHYSICS",
+        "BLDG_NO_": "1165",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 47,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814331942295, 21.2982400440483]
+      },
+      "properties": {
+        "OBJECTID": 47,
+        "NEW_BLDG": "HALE MANOA",
+        "BLDG_NO_": "1182",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 48,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814315090488, 21.298240616135]
+      },
+      "properties": {
+        "OBJECTID": 48,
+        "NEW_BLDG": "HALE MANOA",
+        "BLDG_NO_": "1182",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 49,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815814653482, 21.2982668483432]
+      },
+      "properties": {
+        "OBJECTID": 49,
+        "NEW_BLDG": "WATANABE HALL",
+        "BLDG_NO_": "1160",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 50,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818927475336, 21.2983099604592]
+      },
+      "properties": {
+        "OBJECTID": 50,
+        "NEW_BLDG": "CAMPUS CENTER BUILDING",
+        "BLDG_NO_": "1055",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 51,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820495540983, 21.2983618477999]
+      },
+      "properties": {
+        "OBJECTID": 51,
+        "NEW_BLDG": "SINCLAIR LIBRARY",
+        "BLDG_NO_": "1133",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 52,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820567954271, 21.298409262346]
+      },
+      "properties": {
+        "OBJECTID": 52,
+        "NEW_BLDG": "SINCLAIR LIBRARY",
+        "BLDG_NO_": "1133",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 53,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820567083895, 21.2984331730375]
+      },
+      "properties": {
+        "OBJECTID": 53,
+        "NEW_BLDG": "SINCLAIR LIBRARY",
+        "BLDG_NO_": "1133",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 54,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.822016970144, 21.298609067326]
+      },
+      "properties": {
+        "OBJECTID": 54,
+        "NEW_BLDG": "WIST HALL",
+        "BLDG_NO_": "1039",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 55,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819816673591, 21.2985907606315]
+      },
+      "properties": {
+        "OBJECTID": 55,
+        "NEW_BLDG": "HEMENWAY HALL",
+        "BLDG_NO_": "1056",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 56,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816506148065, 21.2989350398303]
+      },
+      "properties": {
+        "OBJECTID": 56,
+        "NEW_BLDG": "INFORMATION TECHNOLOGY CENTER",
+        "BLDG_NO_": "1140",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 57,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816507015967, 21.2989617865603]
+      },
+      "properties": {
+        "OBJECTID": 57,
+        "NEW_BLDG": "INFORMATION TECHNOLOGY CENTER",
+        "BLDG_NO_": "1140",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 58,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816768734076, 21.2990969286862]
+      },
+      "properties": {
+        "OBJECTID": 58,
+        "NEW_BLDG": "BILGER ADDITION",
+        "BLDG_NO_": "1126A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 59,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816739436952, 21.2990977493866]
+      },
+      "properties": {
+        "OBJECTID": 59,
+        "NEW_BLDG": "BILGER ADDITION",
+        "BLDG_NO_": "1126A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 60,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814137303013, 21.2991738046011]
+      },
+      "properties": {
+        "OBJECTID": 60,
+        "NEW_BLDG": "JEFFERSON HALL",
+        "BLDG_NO_": "1181",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 61,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.817297579272, 21.2992097829844]
+      },
+      "properties": {
+        "OBJECTID": 61,
+        "NEW_BLDG": "ART BUILDING",
+        "BLDG_NO_": "1049",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 62,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816004233927, 21.2993158321864]
+      },
+      "properties": {
+        "OBJECTID": 62,
+        "NEW_BLDG": "PHYSICAL SCIENCE BUILDING",
+        "BLDG_NO_": "1159",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 63,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814900918791, 21.2993209798144]
+      },
+      "properties": {
+        "OBJECTID": 63,
+        "NEW_BLDG": "KENNEDY THEATRE",
+        "BLDG_NO_": "1183",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 64,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816752999517, 21.2993840658718]
+      },
+      "properties": {
+        "OBJECTID": 64,
+        "NEW_BLDG": "BILGER HALL",
+        "BLDG_NO_": "1126",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 65,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814148707388, 21.2994985472525]
+      },
+      "properties": {
+        "OBJECTID": 65,
+        "NEW_BLDG": "JEFFERSON HALL",
+        "BLDG_NO_": "1181",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 66,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820529948101, 21.2997013351905]
+      },
+      "properties": {
+        "OBJECTID": 66,
+        "NEW_BLDG": "ARCHITECTURE BUILDING",
+        "BLDG_NO_": "1016",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 67,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819059273103, 21.3002429555358]
+      },
+      "properties": {
+        "OBJECTID": 67,
+        "NEW_BLDG": "HAWAII HALL",
+        "BLDG_NO_": "1002",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 68,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819610782295, 21.3003035953182]
+      },
+      "properties": {
+        "OBJECTID": 68,
+        "NEW_BLDG": "CRAWFORD HALL",
+        "BLDG_NO_": "1057",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 69,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820200703891, 21.3003251360627]
+      },
+      "properties": {
+        "OBJECTID": 69,
+        "NEW_BLDG": "GEORGE HALL",
+        "BLDG_NO_": "1019",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 72,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814335438934, 21.3004756502824]
+      },
+      "properties": {
+        "OBJECTID": 72,
+        "NEW_BLDG": "LINCOLN HALL",
+        "BLDG_NO_": "1179",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 74,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818440511306, 21.3006468428947]
+      },
+      "properties": {
+        "OBJECTID": 74,
+        "NEW_BLDG": "QUEEN LILIUOKALANI CENTER FOR STUDENT SERVICES",
+        "BLDG_NO_": "1020",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 75,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818441417384, 21.3006702632518]
+      },
+      "properties": {
+        "OBJECTID": 75,
+        "NEW_BLDG": "QUEEN LILIUOKALANI CENTER FOR STUDENT SERVICES",
+        "BLDG_NO_": "1020",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 77,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818975110373, 21.3007564602605]
+      },
+      "properties": {
+        "OBJECTID": 77,
+        "NEW_BLDG": "SAUNDERS HALL",
+        "BLDG_NO_": "1014",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 78,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818976075742, 21.3007826877528]
+      },
+      "properties": {
+        "OBJECTID": 78,
+        "NEW_BLDG": "SAUNDERS HALL",
+        "BLDG_NO_": "1014",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 79,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818977040754, 21.300809207874]
+      },
+      "properties": {
+        "OBJECTID": 79,
+        "NEW_BLDG": "SAUNDERS HALL",
+        "BLDG_NO_": "1014",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 81,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816185218655, 21.3008217668706]
+      },
+      "properties": {
+        "OBJECTID": 81,
+        "NEW_BLDG": "HAMILTON LIBRARY PHASE 1 (1968) AND PHASE 2 (1972)",
+        "BLDG_NO_": "1199",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 82,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820508142627, 21.300866750008]
+      },
+      "properties": {
+        "OBJECTID": 82,
+        "NEW_BLDG": "BUSINESS ADMINSTRATION BUILDING- SHIDLER",
+        "BLDG_NO_": "1017",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 83,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816186054675, 21.3008454364375]
+      },
+      "properties": {
+        "OBJECTID": 83,
+        "NEW_BLDG": "HAMILTON LIBRARY PHASE 1 (1968) AND PHASE 2 (1972)",
+        "BLDG_NO_": "1199",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 84,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.817709995002, 21.300858358486]
+      },
+      "properties": {
+        "OBJECTID": 84,
+        "NEW_BLDG": "WEBSTER HALL",
+        "BLDG_NO_": "1167",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 85,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816186976559, 21.3008690356503]
+      },
+      "properties": {
+        "OBJECTID": 85,
+        "NEW_BLDG": "HAMILTON LIBRARY PHASE 1 (1968) AND PHASE 2 (1972)",
+        "BLDG_NO_": "1199",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 87,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.819932801044, 21.3008993822314]
+      },
+      "properties": {
+        "OBJECTID": 87,
+        "NEW_BLDG": "BUSINESS ADMINSTRATION BUILDING- SHIDLER",
+        "BLDG_NO_": "1017",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 88,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81658600477, 21.3008926365988]
+      },
+      "properties": {
+        "OBJECTID": 88,
+        "NEW_BLDG": "HAMILTON LIBRARY PHASE 3 (2000)",
+        "BLDG_NO_": "1199C",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 89,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816560676175, 21.3008933676604]
+      },
+      "properties": {
+        "OBJECTID": 89,
+        "NEW_BLDG": "HAMILTON LIBRARY PHASE 3 (2000)",
+        "BLDG_NO_": "1199C",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 90,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815123227037, 21.3009471386314]
+      },
+      "properties": {
+        "OBJECTID": 90,
+        "NEW_BLDG": "MOORE HALL",
+        "BLDG_NO_": "1175",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815098005415, 21.3009478614617]
+      },
+      "properties": {
+        "OBJECTID": 91,
+        "NEW_BLDG": "MOORE HALL",
+        "BLDG_NO_": "1175",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 92,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815126868125, 21.3010480771589]
+      },
+      "properties": {
+        "OBJECTID": 92,
+        "NEW_BLDG": "MOORE HALL",
+        "BLDG_NO_": "1175",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 93,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815101536664, 21.3010487628387]
+      },
+      "properties": {
+        "OBJECTID": 93,
+        "NEW_BLDG": "MOORE HALL",
+        "BLDG_NO_": "1175",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 94,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81412326681, 21.3011204044468]
+      },
+      "properties": {
+        "OBJECTID": 94,
+        "NEW_BLDG": "KOREAN STUDIES, CENTER FOR",
+        "BLDG_NO_": "1076",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 95,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816839111905, 21.3015731859909]
+      },
+      "properties": {
+        "OBJECTID": 95,
+        "NEW_BLDG": "GILMORE HALL",
+        "BLDG_NO_": "1089",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 96,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816839811829, 21.301595553024]
+      },
+      "properties": {
+        "OBJECTID": 96,
+        "NEW_BLDG": "GILMORE HALL",
+        "BLDG_NO_": "1089",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 97,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815182968877, 21.3017555203941]
+      },
+      "properties": {
+        "OBJECTID": 97,
+        "NEW_BLDG": "ST. JOHN PLANT SCIENCE LABORATORY #1",
+        "BLDG_NO_": "1198A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 98,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815182119523, 21.3017341602341]
+      },
+      "properties": {
+        "OBJECTID": 98,
+        "NEW_BLDG": "ST. JOHN PLANT SCIENCE LABORATORY #1",
+        "BLDG_NO_": "1198A",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 99,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81527599275, 21.3022544073031]
+      },
+      "properties": {
+        "OBJECTID": 99,
+        "NEW_BLDG": "SHERMAN LABORATORY",
+        "BLDG_NO_": "1090",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 100,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813863097255, 21.3030238101]
+      },
+      "properties": {
+        "OBJECTID": 100,
+        "NEW_BLDG": "AGRICULTURAL SCIENCE FACILITY",
+        "BLDG_NO_": "1210",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 101,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814639611737, 21.3030148731985]
+      },
+      "properties": {
+        "OBJECTID": 101,
+        "NEW_BLDG": "C-MORE (THE DANIEL K INOUYE CENTER FOR MICROBIAL OCEANOGRAPY: RESEARCH AND EDUCATION)",
+        "BLDG_NO_": "1172B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 102,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814634976258, 21.3034787260354]
+      },
+      "properties": {
+        "OBJECTID": 102,
+        "NEW_BLDG": "BIOMEDICAL SCIENCES BUILDING",
+        "BLDG_NO_": "1172",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 103,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.814610013244, 21.3034796206781]
+      },
+      "properties": {
+        "OBJECTID": 103,
+        "NEW_BLDG": "BIOMEDICAL SCIENCES BUILDING",
+        "BLDG_NO_": "1172",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 105,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.811709089534, 21.3070761901363]
+      },
+      "properties": {
+        "OBJECTID": 105,
+        "NEW_BLDG": "ASTRONOMY, INSTITUTE FOR - LABORATORY AND OFFICES",
+        "BLDG_NO_": "1012C",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 106,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.811420515784, 21.3074609685541]
+      },
+      "properties": {
+        "OBJECTID": 106,
+        "NEW_BLDG": "ASTRONOMY, INSTITUTE FOR - ADMINISTRATION",
+        "BLDG_NO_": "1012B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 107,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820113335437, 21.2995386689433]
+      },
+      "properties": {
+        "OBJECTID": 107,
+        "NEW_BLDG": "GARTLEY HALL",
+        "BLDG_NO_": "1015",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 108,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818277361464, 21.2952851328018]
+      },
+      "properties": {
+        "OBJECTID": 108,
+        "NEW_BLDG": "PARKING STRUCTURE",
+        "BLDG_NO_": "1001",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 109,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.820448189649, 21.301256411457]
+      },
+      "properties": {
+        "OBJECTID": 109,
+        "NEW_BLDG": "BUSINESS ADMINSTRATION BUILDING- SHIDLER",
+        "BLDG_NO_": "1017",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 110,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.8137568305, 21.3025816173827]
+      },
+      "properties": {
+        "OBJECTID": 110,
+        "NEW_BLDG": "AGRICULTURAL SCIENCE FACILITY",
+        "BLDG_NO_": "1210",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 111,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813940661378, 21.2955740975001]
+      },
+      "properties": {
+        "OBJECTID": 111,
+        "NEW_BLDG": "FREAR HALL",
+        "BLDG_NO_": "1211",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 112,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813934822102, 21.2956039979577]
+      },
+      "properties": {
+        "OBJECTID": 112,
+        "NEW_BLDG": "FREAR HALL",
+        "BLDG_NO_": "1211",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 113,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813861906884, 21.2934075378171]
+      },
+      "properties": {
+        "OBJECTID": 113,
+        "NEW_BLDG": "HALE NOELANI TOWER B",
+        "BLDG_NO_": "1123B",
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 114,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815128226015, 21.3004425202388]
+      },
+      "properties": {
+        "OBJECTID": 114,
+        "NEW_BLDG": "LIFE SCIENCES BUILDING",
+        "BLDG_NO_": "1263",
+        "CREATED_USER": "STUDENTGIS_2",
+        "CREATED_DATE": 1715116043000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 434,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81673666305, 21.300276291246]
+      },
+      "properties": {
+        "OBJECTID": 434,
+        "NEW_BLDG": "EDMONDSON-SNYDER CONNECTOR BUILDING",
+        "BLDG_NO_": "1258",
+        "CREATED_USER": "STUDENTGIS_2",
+        "CREATED_DATE": 1715302333000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 435,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.816708149095, 21.3002772184639]
+      },
+      "properties": {
+        "OBJECTID": 435,
+        "NEW_BLDG": "EDMONDSON-SNYDER CONNECTOR BUILDING",
+        "BLDG_NO_": "1258",
+        "CREATED_USER": "STUDENTGIS_2",
+        "CREATED_DATE": 1715302341000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 754,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.815098333868, 21.3004472796556]
+      },
+      "properties": {
+        "OBJECTID": 754,
+        "NEW_BLDG": "LIFE SCIENCES BUILDING",
+        "BLDG_NO_": "1263",
+        "CREATED_USER": "PAULOJUL",
+        "CREATED_DATE": 1717709318000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 770,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.818836578505, 21.2989886879376]
+      },
+      "properties": {
+        "OBJECTID": 770,
+        "NEW_BLDG": "WARRIOR RECREATION CENTER",
+        "BLDG_NO_": "1250",
+        "CREATED_USER": "PAULOJUL",
+        "CREATED_DATE": 1717712183000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": "Staff and Disabled only"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 771,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.813908265577, 21.2955994283272]
+      },
+      "properties": {
+        "OBJECTID": 771,
+        "NEW_BLDG": "FREAR HALL",
+        "BLDG_NO_": "1211",
+        "CREATED_USER": "PAULOJUL",
+        "CREATED_DATE": 1717712365000,
+        "LAST_EDITED_USER": "PAULOJUL",
+        "LAST_EDITED_DATE": 1750204882000,
+        "CATEGORY": "Passenger",
+        "STATUS": "Active",
+        "NOTES": null
+      }
+    }
+  ]
+}
