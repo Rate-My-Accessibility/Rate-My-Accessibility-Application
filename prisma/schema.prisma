@@ -41,7 +41,7 @@ model Stuff {
 
 model Review {
   id            Int @id @default(autoincrement())
-  name          String
+  placeName     String
   content       String
   createdAt     DateTime @default(now())
   owner         String
