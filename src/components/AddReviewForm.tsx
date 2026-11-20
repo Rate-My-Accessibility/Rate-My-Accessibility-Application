@@ -37,10 +37,10 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
     redirect('/auth/signin');
   }
   
-  const onSubmit = async (data: { name: string; content: string; owner: string; source?: FileList;}) => {
+  const onSubmit = async (data: { placeName: string; content: string; owner: string; source?: FileList;}) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
     const review = await addReview({
-      name: data.name,
+      placeName: data.placeName,
       content: data.content,
       owner: data.owner,
     });
@@ -92,10 +92,10 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
               <Form.Label>Title</Form.Label>
               <input
                 type="text"
-                {...register('name')}
-                className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                {...register('placeName')}
+                className={`form-control ${errors.placeName ? 'is-invalid' : ''}`}
               />
-              <div className="invalid-feedback">{errors.name?.message}</div>
+              <div className="invalid-feedback">{errors.placeName?.message}</div>
             </Form.Group>
             <Form.Group>
               <Form.Label>Review</Form.Label>

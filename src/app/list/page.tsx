@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
-import ReviewCard from '@/components/ReviewCard';
+import MyReviewCard from '@/components/MyReviewCard';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { auth } from '@/lib/auth';
 
@@ -34,11 +34,11 @@ const ListPage = async () => {
         <Container>
           <Row>
             <Col>
-              <h1 className='text-center'>Reviews</h1>
+              <h1 className='text-center'>Your Reviews</h1>
               <Row xs={1} className="g-4">
                 {review.map((item) =>
                   <Col key={item.id}>
-                    <ReviewCard review={item}
+                    <MyReviewCard review={item}
                             photos={photos.filter(photo => (photo.reviewId === item.id))} />
                   </Col>
                 )}

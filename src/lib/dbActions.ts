@@ -16,10 +16,10 @@ export async function addPhoto(photo : { source: string; reviewId: number; owner
   });
 }
 
-export async function addReview(review : { name: string; content: string; owner: string;}) { 
+export async function addReview(review : { placeName: string; content: string; owner: string;}) { 
   return prisma.review.create({
     data: {
-      name: review.name,
+      placeName: review.placeName,
       content: review.content,
       owner: review.owner,
     },

@@ -7,7 +7,7 @@ export const AddPhotoSchema = Yup.object({
 
 
 export const AddReviewSchema = Yup.object({
-  name: Yup.string().required(),
+  placeName: Yup.string().required(),
   content: Yup.string().required(),
   owner: Yup.string().required(),
 });
