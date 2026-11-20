@@ -7,18 +7,15 @@ import { supabase } from '@/lib/supabase';
 export async function uploadImage(formData: FormData) {
   // Retrieve the uploaded file
   const file = formData.get('image');
-
   if (!(file instanceof File) || file.size === 0) {
     return { error: 'No file selected.' };
   }
 
   // Validate the image
   const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heif', 'image/gif'];
-
   if (!allowedTypes.includes(file.type)) {
     return { error: 'Invalid image format.' };
   }
-
   if (file.size > 5 * 1024 * 1024) {
     return { error: 'Image must be smaller than 5 MB.' };
   }
