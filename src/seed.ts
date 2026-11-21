@@ -2,6 +2,8 @@ import { prisma } from './lib/prisma';
 import { Role, Condition } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
+import * as elevators from '../public/data/elevator.json';
+import titleCase  from './actions/titleCase';
 
 async function main() {
   console.log('Seeding the database');
@@ -35,6 +37,19 @@ async function main() {
       },
     });
   }
+
+  for (const data of elevators.features) {
+    await prisma.elevator.upsert({
+      where: { id: elevators.features.indexOf(data) + 1},
+      update: {},
+      create: {
+        latitude: data.geometry.coordinates[1],
+        longitude: data.geometry.coordinates[0],
+        location: titleCase(data.properties.NEW_BLDG),
+      },
+    });
+  }
+
 }
 main()
   .then(() => prisma.$disconnect())

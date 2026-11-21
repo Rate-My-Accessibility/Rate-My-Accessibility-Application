@@ -55,3 +55,10 @@ model Photo {
   owner     String
   review    Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
 }
+
+model Elevator {
+  id            Int     @id @default(autoincrement())
+  latitude      Float
+  longitude     Float
+  location      String
+}

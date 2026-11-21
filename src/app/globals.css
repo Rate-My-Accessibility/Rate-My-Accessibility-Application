@@ -21,3 +21,11 @@ body {
 .carousel-control-next {
   opacity: 1;
 }
+
+.map-wrapper .leaflet-top.leaflet-left {
+  transition: transform 0.25s ease;
+}
+
+.map-wrapper.sidebar-open .leaflet-top.leaflet-left {
+  transform: translateX(330px); /* sidebar width 320 + gap 10 */
+}
