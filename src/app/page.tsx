@@ -10,15 +10,15 @@ const LandingPage = () => (
 >
       <Row className="justify-content-center text-center">
         <Col xs={12}>
-          <h1> Rate My Accessibility</h1>
+          <h1 style={{ fontSize: "80px" }}> <strong>Rate My Accessibility</strong></h1>
           <h5>Sign in to view and rate your campus&apos;s  </h5>
-          <h5>Accessibility features</h5>
+          <h5>accessibility features!</h5>
           <div className="d-flex justify-content-center flex-wrap gap-3 mt-4">
-            <Button href="/auth/signin" id="sign-in-button">
-              Sign In
+            <Button href="/auth/signin" id="sign-in-button" style={{ padding: "15px 50px" }}>
+              <strong>Sign In</strong>
             </Button>
-            <Button href="/auth/signup" id="sign-up-button">
-              Sign Up Now!
+            <Button href="/auth/signup" id="sign-up-button" style={{ padding: "15px 50px" }}>
+              <strong>Sign Up Now!</strong>
             </Button>
           </div>
         </Col>

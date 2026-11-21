@@ -211,3 +211,24 @@ text-decoration: underline;
 
 text-decoration: underline;
 }
+
+.give-button {
+  background-color: #a51c30;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.give-button:hover,
+.give-button:focus {
+  background-color: #8b1728;
+  color: white;
+}
+
+.give-button svg {
+  color: #650018;
+  font-size: 28px;
+}
