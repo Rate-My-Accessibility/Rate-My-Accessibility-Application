@@ -17,5 +17,13 @@
     {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Freight", "user": "student@hawaii.edu", "scores": [8, 10, 7, 6, 9, 7], "text": "Great elevator, fast and clean. Plenty of space. Separate rear and front door controls can be confusing and prevent users from holding the door open."},
     {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Left", "user": "student@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Average elevator, could be more spacious and move faster."},
     {"elevatorName": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST) - Right", "user": "student@hawaii.edu", "scores": [6.5, 5.5, 7, 4, 7, 7], "text": "Average elevator, could be cleaner."}
+  ],
+  "defaultFeatureAspects": [
+    { "type": "ELEVATOR", "aspectKey": "speed", "label": "Speed", "weight": 25 },
+    { "type": "ELEVATOR", "aspectKey": "size", "label": "Size", "weight": 10 },
+    { "type": "ELEVATOR", "aspectKey": "availability", "label": "Availability", "weight": 20 },
+    { "type": "ELEVATOR", "aspectKey": "crowding", "label": "Crowding", "weight": 10 },
+    { "type": "ELEVATOR", "aspectKey": "reliability", "label": "Reliability", "weight": 25 },
+    { "type": "ELEVATOR", "aspectKey": "cleanliness", "label": "Cleanliness", "weight": 10 }
   ]
 }

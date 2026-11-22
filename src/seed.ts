@@ -1,5 +1,5 @@
 import { prisma } from './lib/prisma';
-import { Role } from '@prisma/client';
+import { Role, FeatureType } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
@@ -57,6 +57,22 @@ async function main() {
       },
     });
   }
+  for (const aspect of config.defaultFeatureAspects) {
+  const type = aspect.type as FeatureType;
+  console.log(`  Adding aspect for ${aspect.type} feature: ${aspect.aspectKey} [Weight: ${aspect.weight}%]`);
+  await prisma.featureAspect.upsert({
+    where: {
+      type_aspectKey: { type, aspectKey: aspect.aspectKey }
+     },
+    update: {},
+    create: {
+      type,
+      aspectKey: aspect.aspectKey,
+      label: aspect.label,
+      weight: aspect.weight,
+    },
+  });
+}
 }
 main()
   .then(() => prisma.$disconnect())
