@@ -1,5 +1,7 @@
 'use client';
 
+import PasswordInput from '@/components/PasswordInput';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
@@ -107,23 +109,23 @@ const SignUp = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="signup-password">
                       <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
+                      <PasswordInput
+                        id="signup-password"
+                        label="Password"
                         autoComplete="new-password"
                         {...register('password')}
-                        isInvalid={Boolean(errors.password)}
+                        error={errors.password?.message}
                       />
-                      <Form.Control.Feedback type="invalid">{errors.password?.message}</Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="signup-confirm-password">
                       <Form.Label>Confirm Password</Form.Label>
-                      <Form.Control
-                        type="password"
+                      <PasswordInput
+                        id="signup-confirm-password"
+                        label="Confirm password"
                         autoComplete="new-password"
                         {...register('confirmPassword')}
-                        isInvalid={Boolean(errors.confirmPassword)}
+                        error={errors.confirmPassword?.message}
                       />
-                      <Form.Control.Feedback type="invalid">{errors.confirmPassword?.message}</Form.Control.Feedback>
                     </Form.Group>
                     {verificationId && (
                       <Form.Group className="mb-3" controlId="signup-code">
