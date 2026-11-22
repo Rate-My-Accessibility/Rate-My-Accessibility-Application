@@ -10,16 +10,18 @@ import { addReview, addPhoto } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddReviewSchema, AddPhotoSchema } from '@/lib/validationSchemas';
 import { uploadImage } from '@/actions/uploadImage';
+import { Elevator } from '@prisma/client';
 
 
 
 type AddReviewFormProps = {
+  elevator: Elevator | null;
   onCancel: () => void;
 };
 
 const CombinedSchema = AddReviewSchema.concat(AddPhotoSchema.omit(['reviewId']));
 
-const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
+const AddReviewForm = ({ elevator, onCancel } : AddReviewFormProps) => {
   const { data: session, status } = useSession();
   // console.log('AddStuffForm', status, session);
   const currentUser = session?.user?.email || '';
@@ -43,6 +45,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
       placeName: data.placeName,
       content: data.content,
       owner: data.owner,
+      elevatorId: elevator?.id ?? null,
     });
 
     const files = Array.from(data.source ?? []);
@@ -66,6 +69,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
           source: url,
           reviewId: review.id,
           owner: data.owner,
+          elevatorId: elevator?.id ?? null,
         }),
       ),
     );
@@ -81,7 +85,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
 
 
   return (
-    <Container>
+
       <Card>
         <Card.Header className="text-center">
           <h2>Add Review</h2>
@@ -118,6 +122,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
               <div className="invalid-feedback">{errors.source?.message}</div>
             </Form.Group>
             <input type="hidden" {...register('owner')} value={currentUser} />
+            <input type="hidden" {...register('elevatorId')} value={elevator?.id} />
             <Form.Group className="form-group">
               <Row className="pt-3">
                 <Col>
@@ -138,7 +143,7 @@ const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
           </Form>
         </Card.Body>
       </Card>
-    </Container>
+
   );
 };
 

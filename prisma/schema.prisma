@@ -46,14 +46,16 @@ model Review {
   createdAt     DateTime @default(now())
   owner         String
   photos        Photo[]
+  elevatorId    Int?
 }
 
 model Photo {
-  id        Int     @id @default(autoincrement())
-  reviewId  Int
-  source    String
-  owner     String
-  review    Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  id          Int     @id @default(autoincrement())
+  reviewId    Int
+  elevatorId  Int?
+  source      String
+  owner       String
+  review      Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
 }
 
 model Elevator {

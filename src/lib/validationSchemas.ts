@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 export const AddPhotoSchema = Yup.object({
   source: Yup.mixed<FileList>().optional(),
   reviewId: Yup.number().required(),
+  elevatorId: Yup.number().nullable(),
 });
 
 
@@ -10,6 +11,7 @@ export const AddReviewSchema = Yup.object({
   placeName: Yup.string().required(),
   content: Yup.string().required(),
   owner: Yup.string().required(),
+  elevatorId: Yup.number().nullable(),
 });
 
 export const AddStuffSchema = Yup.object({

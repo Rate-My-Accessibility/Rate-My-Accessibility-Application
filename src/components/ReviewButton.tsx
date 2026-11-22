@@ -3,9 +3,10 @@
 import AddReviewForm from '@/components/AddReviewForm';
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react';
+import { Elevator } from '@prisma/client';
 
 
-const ReviewButton = () => {
+const ReviewButton = ({ elevator } : { elevator : Elevator | null}) => {
   const [show, setShow] = useState(false);
   return (
     <main>
@@ -14,9 +15,9 @@ const ReviewButton = () => {
         </Button>
 
         <Modal show={show} onHide={() => setShow(false)} centered>
-            <Modal.Body>
-                <AddReviewForm onCancel={() => setShow(false)} />
-            </Modal.Body>
+
+            <AddReviewForm elevator={elevator} onCancel={() => setShow(false)} />
+
         </Modal>
     </main>
   );

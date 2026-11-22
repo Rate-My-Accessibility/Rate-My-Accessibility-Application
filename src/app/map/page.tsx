@@ -16,9 +16,15 @@ const MapPage = async () => {
     const elevators = await prisma.elevator.findMany({
         where: {}
     })
+    const reviews = await prisma.review.findMany({
+        where: {},
+        orderBy: {
+            createdAt: "desc",
+        }
+    });
     
     return (
-        <CampusMap elevators={elevators}/>  
+        <CampusMap elevators={elevators} reviews={reviews}/>  
     );
 }
 
