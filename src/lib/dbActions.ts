@@ -7,7 +7,7 @@ import { prisma } from './prisma';
 import { HawaiiEmailSchema, PasswordSchema } from './validationSchemas';
 
 export async function addReview(review : { name: string; content: string; owner: string;}) { 
-  await prisma.review.create({
+  await prisma.oldReview.create({ // was: "review.create"
     data: {
       name: review.name,
       content: review.content,
