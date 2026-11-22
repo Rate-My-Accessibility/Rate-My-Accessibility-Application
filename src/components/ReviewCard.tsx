@@ -1,9 +1,9 @@
 'use client';
 
-import { Review } from '@prisma/client';
+import { OldReview } from '@prisma/client';
 import { Card, Row, Col } from 'react-bootstrap';
 
-const ReviewCard = ({review} : { review : Review }) => (
+const ReviewCard = ({review} : { review : OldReview }) => (
     <Card className='h-100'>
         <Card.Header>
             <Row>
