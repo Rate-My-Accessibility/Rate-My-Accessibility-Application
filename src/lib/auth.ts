@@ -2,7 +2,6 @@ import NextAuth, { type DefaultSession } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import bcrypt from 'bcrypt';
 import { prisma } from './prisma';
-import { HawaiiEmailSchema } from './validationSchemas';
 
 declare module 'next-auth' {
   interface Session {
@@ -10,6 +9,14 @@ declare module 'next-auth' {
   }
   interface User {
     role?: string;
+    passwordVersion?: number;
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    role?: string;
+    passwordVersion?: number;
   }
 }
 
@@ -23,38 +30,44 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
       },
       async authorize(credentials) {
         if (
-          !credentials ||
-          typeof credentials.email !== 'string' ||
-          typeof credentials.password !== 'string' ||
-          credentials.password.length > 1024
+          typeof credentials?.email !== 'string' ||
+          typeof credentials?.password !== 'string' || credentials.password.length > 1024
         ) return null;
-
-        let email: string;
-        try {
-          email = await HawaiiEmailSchema.validate(credentials.email);
-        } catch {
-          return null;
-        }
-
+        const email = credentials.email.trim().toLowerCase();
+        if (email.length > 254 || !/^[^\s@]+@hawaii\.edu$/.test(email)) return null;
         const user = await prisma.user.findUnique({ where: { email } });
-        if (!user || !user.emailVerified || typeof user.password !== 'string') return null;
-        if (!(await bcrypt.compare(credentials.password, user.password))) return null;
-
-        return { id: String(user.id), email: user.email, name: user.email, role: user.role };
+        if (!user?.emailVerified || !(await bcrypt.compare(credentials.password, user.password))) return null;
+        return {
+          id: String(user.id),
+          email: user.email,
+          name: user.email,
+          role: user.role,
+          passwordVersion: user.passwordVersion,
+        };
       },
     }),
   ],
   pages: { signIn: '/auth/signin', signOut: '/auth/signout' },
   callbacks: {
-    session({ session, token }) {
-      return {
-        ...session,
-        user: { ...session.user, role: typeof token.role === 'string' ? token.role : undefined },
-      };
-    },
-    jwt({ token, user }) {
-      if (user) token.role = user.role;
+    async jwt({ token, user }) {
+      if (user) {
+        token.sub = user.id;
+        token.role = user.role;
+        token.passwordVersion = user.passwordVersion;
+        return token;
+      }
+      const id = Number(token.sub);
+      if (!Number.isSafeInteger(id) || id <= 0 || typeof token.passwordVersion !== 'number') return null;
+      const current = await prisma.user.findUnique({
+        where: { id },
+        select: { passwordVersion: true, emailVerified: true, role: true },
+      });
+      if (!current?.emailVerified || current.passwordVersion !== token.passwordVersion) return null;
+      token.role = current.role;
       return token;
+    },
+    session({ session, token }) {
+      return { ...session, user: { ...session.user, role: token.role } };
     },
   },
 });
