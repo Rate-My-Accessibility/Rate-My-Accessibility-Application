@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
 import { redirect } from 'next/navigation';
-import { addReview } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddReviewSchema } from '@/lib/validationSchemas';
 
@@ -21,9 +20,11 @@ type AddReviewFormProps = {
 const AddReviewForm = ({ onCancel } : AddReviewFormProps) => {
   const onSubmit = async (data: { name: string; content: string; owner: string }) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
-  await addReview(data);
-  swal('Success', 'Your item has been added', 'success', {
-    timer: 1000,
+  // TODO(#39): rework for the feature detail page — one <fieldset> per aspect
+  // (1–10 integer radios + "Not rated"), optional text, server action
+  // upserts Review by (featureId, userId) + updateFeatureScore in one tx.
+  swal('Coming soon', 'Writing reviews is moving to the feature detail page.', 'info', {
+  timer: 1500,
     buttons: [false],
   });
 

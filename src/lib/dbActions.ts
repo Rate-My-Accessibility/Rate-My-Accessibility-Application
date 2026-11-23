@@ -6,18 +6,6 @@ import { auth } from './auth';
 import { prisma } from './prisma';
 import { HawaiiEmailSchema, PasswordSchema } from './validationSchemas';
 
-export async function addReview(review : { name: string; content: string; owner: string;}) { 
-  await prisma.oldReview.create({ // was: "review.create"
-    data: {
-      name: review.name,
-      content: review.content,
-      owner: review.owner,
-    },
-  });
-}
-
-
-
 /** Authenticated password change, not a forgot-password/reset endpoint. */
 export async function changePassword(credentials: {
   email: string;

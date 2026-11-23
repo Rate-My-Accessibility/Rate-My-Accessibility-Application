@@ -65,7 +65,7 @@ const SignUp = () => {
         setError('Your email is verified. Please use the sign-in page to sign in.');
         return;
       }
-      router.push('/add');
+      router.push('/list');
       router.refresh();
     } catch {
       setError('The request could not finish. Try again, or sign in if verification already succeeded.');

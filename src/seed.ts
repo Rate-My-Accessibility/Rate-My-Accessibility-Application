@@ -30,34 +30,6 @@ async function main() {
       },
     });
   }
-  for (const elevator of config.defaultElevators) {
-    console.log(`  Adding elevator: ${elevator.name}`);
-    await prisma.elevator.upsert({
-      where: { id: config.defaultElevators.indexOf(elevator) + 1 },
-      update: {},
-      create: {
-        name: elevator.name,
-        photos: elevator.photos,
-        scores: elevator.scores,
-        coordinates: elevator.coordinates,
-      },
-    });
-  }
-  for (const rating of config.defaultElevatorRatings) {
-    console.log(`  Adding rating for elevator "${rating.elevatorName}" by "${rating.user}"`);
-    await prisma.elevatorRating.upsert({
-      where: { 
-        elevatorName_user: { elevatorName: rating.elevatorName, user: rating.user }
-       },
-      update: {},
-      create: {
-        elevatorName: rating.elevatorName,
-        user: rating.user,
-        scores: rating.scores,
-        text: rating.text,
-      },
-    });
-  }
   for (const aspect of config.defaultFeatureAspects) {
   const type = aspect.type as FeatureType;
   console.log(`  Adding aspect for ${aspect.type} feature: ${aspect.aspectKey} [Weight: ${aspect.weight}%]`);
