@@ -25,5 +25,30 @@
     { "type": "ELEVATOR", "aspectKey": "crowding", "label": "Crowding", "weight": 10 },
     { "type": "ELEVATOR", "aspectKey": "reliability", "label": "Reliability", "weight": 25 },
     { "type": "ELEVATOR", "aspectKey": "cleanliness", "label": "Cleanliness", "weight": 10 }
+  ],
+  "defaultFeatures": [
+    { "name": "Pacific Ocean Science & Technology (Post) — Freight", "building": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)", "sourceObjectId": "ELEVATOR:38", "longitude": -157.816165798719, "latitude": 21.2974836537678 },
+    { "name": "Pacific Ocean Science & Technology (Post) — Left", "building": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)", "sourceObjectId": "ELEVATOR:39", "longitude": -157.816460360522, "latitude": 21.2975067199529 },
+    { "name": "Pacific Ocean Science & Technology (Post) — Right", "building": "PACIFIC OCEAN SCIENCE & TECHNOLOGY (POST)", "sourceObjectId": "ELEVATOR:40", "longitude": -157.816461215438, "latitude": 21.2975314959406 },
+    { "name": "Hemenway Hall", "building": "HEMENWAY HALL", "sourceObjectId": "ELEVATOR:55", "longitude": -157.819816673591, "latitude": 21.2985907606315 },
+    { "name": "Parking Structure — Southwest", "building": "PARKING STRUCTURE", "sourceObjectId": "ELEVATOR:22", "longitude": -157.818274769755, "latitude": 21.2953096395334 }
+  ],
+  "defaultFeatureImages": [
+    { "sourceObjectId": "ELEVATOR:39", "file": "POST-elevator-left-exterior.jpg", "altText": "Exterior of the Pacific Ocean Science & Technology (Post) left elevator", "priority": 1 },
+    { "sourceObjectId": "ELEVATOR:39", "file": "POST-elevator-left-interior.jpg", "altText": "Interior of the Pacific Ocean Science & Technology (Post) left elevator", "priority": 2 },
+    { "sourceObjectId": "ELEVATOR:40", "file": "POST-elevator-right-exterior.jpg", "altText": "Exterior of the Pacific Ocean Science & Technology (Post) right elevator", "priority": 1 },
+    { "sourceObjectId": "ELEVATOR:40", "file": "POST-elevator-right-interior.jpg", "altText": "Interior of the Pacific Ocean Science & Technology (Post) right elevator", "priority": 2 },
+    { "sourceObjectId": "ELEVATOR:55", "file": "HemenwayHall-Elevator-Exterior.jpg", "altText": "Exterior of the Hemenway Hall elevator", "priority": 1 },
+    { "sourceObjectId": "ELEVATOR:55", "file": "HemenwayHall-Elevator-Interior.jpg", "altText": "Interior of the Hemenway Hall elevator", "priority": 2 },
+    { "sourceObjectId": "ELEVATOR:22", "file": "Parking-Elevator-Exterior.jpg", "altText": "Exterior of the parking structure elevator", "priority": 1 },
+    { "sourceObjectId": "ELEVATOR:22", "file": "Parking-Elevator-Interior.jpg", "altText": "Interior of the parking structure elevator", "priority": 2 }
+  ],
+  "defaultFeatureReviews": [
+    { "sourceObjectId": "ELEVATOR:38", "user": "admin@hawaii.edu", "scores": { "speed": 8, "size": 10, "availability": 7, "crowding": 6, "reliability": 9, "cleanliness": 7 }, "text": "Useful elevator, but a little bit out of sight. Large groups can occasionally get in the way during peak hours." },
+    { "sourceObjectId": "ELEVATOR:39", "user": "admin@hawaii.edu", "scores": { "speed": 7, "size": 5, "availability": 7, "crowding": 4, "reliability": 7, "cleanliness": 7 }, "text": "Small and often crowded. Feels slower than the freight elevator, but still convenient. The adjacent elevator can help distribute the load." },
+    { "sourceObjectId": "ELEVATOR:40", "user": "admin@hawaii.edu", "scores": { "speed": 7, "size": 5, "availability": 7, "crowding": 4, "reliability": 7, "cleanliness": 7 }, "text": "Same as the left elevator - a bit slow, often crowded, but convenient.." },
+    { "sourceObjectId": "ELEVATOR:38", "user": "student@hawaii.edu", "scores": { "speed": 8, "size": 10, "availability": 7, "crowding": 6, "reliability": 9, "cleanliness": 7 }, "text": "Great elevator, fast and clean. Plenty of space. Separate rear and front door controls can be confusing and prevent users from holding the door open." },
+    { "sourceObjectId": "ELEVATOR:39", "user": "student@hawaii.edu", "scores": { "speed": 6, "size": 6, "availability": 7, "crowding": 4, "reliability": 7, "cleanliness": 7 }, "text": "Average elevator, could be more spacious and move faster." },
+    { "sourceObjectId": "ELEVATOR:40", "user": "student@hawaii.edu", "scores": { "speed": 6, "size": 6, "availability": 7, "crowding": 4, "reliability": 7, "cleanliness": 7 }, "text": "Average elevator, could be cleaner." }
   ]
 }
