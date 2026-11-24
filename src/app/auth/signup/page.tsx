@@ -1,105 +1,166 @@
 'use client';
 
-import { signIn } from 'next-auth/react'; // v5 compatible
+import PasswordInput from '@/components/PasswordInput';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
-import { createUser } from '@/lib/dbActions';
+import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { SignUpSchema } from '@/lib/validationSchemas';
+import { requestSignupCode, verifySignupCode } from '@/lib/signupActions';
 
-type SignUpForm = {
-  email: string;
-  password: string;
-  confirmPassword: string;
-  // acceptTerms: boolean;
-};
+type SignUpForm = Yup.InferType<typeof SignUpSchema>;
 
-/** The sign up page. */
 const SignUp = () => {
-  const validationSchema = Yup.object().shape({
-    email: Yup.string().required('Email is required').email('Email is invalid'),
-    password: Yup.string()
-      .required('Password is required')
-      .min(6, 'Password must be at least 6 characters')
-      .max(40, 'Password must not exceed 40 characters'),
-    confirmPassword: Yup.string()
-      .required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
-  });
-
+  const router = useRouter();
+  const [verificationId, setVerificationId] = useState<string | null>(null);
+  const [verificationEmail, setVerificationEmail] = useState('');
+  const [code, setCode] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
-  } = useForm<SignUpForm>({
-    resolver: yupResolver(validationSchema),
-  });
+    formState: { errors, isSubmitting },
+  } = useForm<SignUpForm>({ resolver: yupResolver(SignUpSchema) });
 
   const onSubmit = async (data: SignUpForm) => {
-    // console.log(JSON.stringify(data, null, 2));
-    await createUser(data);
-    // After creating, signIn with redirect to the add page
-    await signIn('credentials', { callbackUrl: '/add', ...data });
+    setError('');
+    setMessage('');
+    try {
+      if (!verificationId) {
+        const result = await requestSignupCode({ email: data.email });
+        if (!result.ok) {
+          setError(result.error);
+          return;
+        }
+        setVerificationId(result.verificationId);
+        setVerificationEmail(result.email);
+        setMessage(`A code was sent to ${result.email}. Check your inbox and spam folder.`);
+        return;
+      }
+
+      const result = await verifySignupCode({
+        verificationId,
+        code,
+        password: data.password,
+      });
+      if (!result.ok) {
+        setError(result.error);
+        return;
+      }
+
+      // The code is already consumed even if the following sign-in fails.
+      setVerificationId(null);
+      setCode('');
+      setMessage('Email verified. Signing you in…');
+      const login = await signIn('credentials', {
+        email: result.email,
+        password: data.password,
+        redirect: false,
+      });
+      if (!login || login.error) {
+        setError('Your email is verified. Please use the sign-in page to sign in.');
+        return;
+      }
+      router.push('/add');
+      router.refresh();
+    } catch {
+      setError('The request could not finish. Try again, or sign in if verification already succeeded.');
+    }
+  };
+
+  const restart = () => {
+    setVerificationId(null);
+    setVerificationEmail('');
+    setCode('');
+    setError('');
+    setMessage('Enter your details to request a new code. Wait at least 60 seconds between requests.');
   };
 
   return (
     <main>
       <Container>
         <Row className="justify-content-center">
-          <Col xs={5}>
+          <Col xs={12} md={8} lg={5}>
             <h1 className="text-center">Sign Up</h1>
             <Card>
               <Card.Body>
+                <p>Use your @hawaii.edu email. Your account is created after you verify the code.</p>
+                <p>Already registered but unverified? Use your existing password here to verify your email.</p>
+                {error && <Alert variant="danger" role="alert">{error}</Alert>}
+                {message && <Alert variant="info" role="status">{message}</Alert>}
                 <Form onSubmit={handleSubmit(onSubmit)}>
-                  <Form.Group className="form-group">
-                    <Form.Label>Email</Form.Label>
-                    <input
-                      type="text"
-                      {...register('email')}
-                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                    />
-                    <div className="invalid-feedback">{errors.email?.message}</div>
-                  </Form.Group>
-
-                  <Form.Group className="form-group">
-                    <Form.Label>Password</Form.Label>
-                    <input
-                      type="password"
-                      {...register('password')}
-                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                    />
-                    <div className="invalid-feedback">{errors.password?.message}</div>
-                  </Form.Group>
-                  <Form.Group className="form-group">
-                    <Form.Label>Confirm Password</Form.Label>
-                    <input
-                      type="password"
-                      {...register('confirmPassword')}
-                      className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
-                    />
-                    <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
-                  </Form.Group>
-                  <Form.Group className="form-group py-3">
-                    <Row>
-                      <Col>
-                        <Button type="submit" className="btn btn-primary">
-                          Register
+                  <fieldset disabled={isSubmitting}>
+                    <Form.Group className="mb-3" controlId="signup-email">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        type="email"
+                        autoComplete="email"
+                        {...register('email')}
+                        readOnly={Boolean(verificationId)}
+                        isInvalid={Boolean(errors.email)}
+                      />
+                      <Form.Control.Feedback type="invalid">{errors.email?.message}</Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="signup-password">
+                      <Form.Label>Password</Form.Label>
+                      <PasswordInput
+                        id="signup-password"
+                        label="Password"
+                        autoComplete="new-password"
+                        {...register('password')}
+                        error={errors.password?.message}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="signup-confirm-password">
+                      <Form.Label>Confirm Password</Form.Label>
+                      <PasswordInput
+                        id="signup-confirm-password"
+                        label="Confirm password"
+                        autoComplete="new-password"
+                        {...register('confirmPassword')}
+                        error={errors.confirmPassword?.message}
+                      />
+                    </Form.Group>
+                    {verificationId && (
+                      <Form.Group className="mb-3" controlId="signup-code">
+                        <Form.Label>Verification code for {verificationEmail}</Form.Label>
+                        <Form.Control
+                          type="text"
+                          inputMode="numeric"
+                          autoComplete="one-time-code"
+                          pattern="[0-9]{6}"
+                          minLength={6}
+                          maxLength={6}
+                          value={code}
+                          onChange={(event) => setCode(event.target.value)}
+                          required
+                        />
+                        <Form.Text>Expires in 10 minutes. Only the newest code works.</Form.Text>
+                      </Form.Group>
+                    )}
+                    <div className="d-flex flex-wrap gap-2">
+                      <Button type="submit">
+                        {isSubmitting ? 'Please wait…' : verificationId ? 'Verify and continue' : 'Send verification code'}
+                      </Button>
+                      {verificationId && (
+                        <Button type="button" variant="outline-secondary" onClick={restart}>
+                          Request a new code / change email
                         </Button>
-                      </Col>
-                      <Col>
-                        <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
-                          Reset
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Form.Group>
+                      )}
+                      <Button type="button" variant="warning" onClick={() => { restart(); reset(); }}>
+                        Reset
+                      </Button>
+                    </div>
+                  </fieldset>
                 </Form>
               </Card.Body>
-              <Card.Footer>
-                Already have an account?
-                <a href="/auth/signin">Sign in</a>
-              </Card.Footer>
+              <Card.Footer>Already verified? <a href="/auth/signin">Sign in</a></Card.Footer>
             </Card>
           </Col>
         </Row>

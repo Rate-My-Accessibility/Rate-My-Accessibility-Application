@@ -17,29 +17,66 @@ enum Role {
   ADMIN
 }
 
+enum FeatureType {
+  ELEVATOR
+  RAMP
+  WHEELCHAIR_LIFT
+  PARKING
+}
+
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  role     Role   @default(USER)
+  id            Int       @id @default(autoincrement())
+  email         String    @unique
+  password      String
+  role          Role      @default(USER)
+  emailVerified DateTime?
+  passwordVersion Int @default(0)
+  passwordResetToken PasswordResetToken?
+  reviews       Review[]
 }
 
-enum Condition {
-  excellent
-  good
-  fair
-  poor
+model EmailVerificationToken {
+  email          String   @id
+  id             String   @unique @default(uuid())
+  tokenHash      String   @unique
+  expiresAt      DateTime
+  sentAt         DateTime @default(now())
+  attempts       Int      @default(0)
+  windowStartsAt DateTime @default(now())
+  sendCount      Int      @default(0)
+
+  @@index([expiresAt])
 }
 
-model Stuff {
-  id        Int       @id @default(autoincrement())
-  name      String
-  quantity  Int
-  condition Condition @default(good)
-  owner     String
+model PasswordResetToken {
+  id                  String   @id @default(uuid())
+  userId              Int      @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email               String
+  tokenHash           String?  @unique
+  passwordFingerprint String
+  expiresAt           DateTime?
+  requestedAt         DateTime @default(now())
+  windowStartsAt      DateTime @default(now())
+  sendCount           Int      @default(0)
+
+  @@index([expiresAt])
 }
 
-model Review {
+// NOTE: Prisma does not support composite types on Postgres.
+// CURRENT SOLUTION: Use an array instead and handle the structure in our TypeScript.
+
+model Elevator {
+  id              Int           @id @default(autoincrement())
+  name            String        @unique
+  photos          String[]
+  // order: [speed, size, availability, crowding, reliability, cleanliness]
+  scores          Float[]
+  coordinates     Float[]
+  elevatorRatings ElevatorRating[]
+}
+
+model OldReview {
   id            Int @id @default(autoincrement())
   placeName     String
   content       String
@@ -63,4 +100,72 @@ model Elevator {
   latitude      Float
   longitude     Float
   location      String
+
+  @@map("Review") // preserve Review table for old-type reviews
+}
+
+model ElevatorRating {
+  id            Int    @id @default(autoincrement())
+  elevator      Elevator @relation(fields: [elevatorName], references: [name])
+  elevatorName  String
+  user          String
+  scores        Float[]
+  text          String
+
+  @@unique([elevatorName, user])
+}
+
+model Feature {
+  id              Int       @id @default(autoincrement())
+  type            FeatureType
+  name            String    @unique
+  building        String
+  status          String?
+  longitude       Float
+  latitude        Float
+  scoreAverages   Json?
+  accessScore     Float?
+  reviews         Review[]
+  featuredPhotos  Image[]
+  sourceObjectId String?  @unique // from map server
+}
+
+model Image {
+  id        Int    @id @default(autoincrement())
+  feature   Feature @relation(fields: [featureId], references: [id])
+  featureId Int
+  file      String
+  altText   String
+  priority  Int
+
+  @@unique([featureId, priority])
+}
+
+// Placeholder table for now - current review system works differently
+model Review {
+  id        Int  @id @default(autoincrement())
+  feature   Feature @relation(fields: [featureId], references: [id])
+  featureId Int
+  user      User    @relation(fields: [userId], references: [id])
+  userId    Int
+  scores    Json // non-empty - at least one rating per review (enforced in server actions)
+  text      String?
+  photos    String[] @default([])
+  createdAt DateTime @default(now()) // preserve from original Review model
+  updatedAt DateTime @updatedAt
+  
+  @@unique([featureId, userId]) // max. one review per user per feature
+  @@map("user_review") // DB table is user_review (AI-suggested, helps preserve current review system)
+}
+
+// instead of hard-coded, static aspects and weights, we can model them in a table
+// that way, admins might be able to edit weights in future implementations directly on-site
+model FeatureAspect {
+  id        Int         @id @default(autoincrement())
+  type      FeatureType
+  aspectKey String
+  label     String // for future on-site breakdown (/how-we-score and hover modal)
+  weight    Float // percentage - must sum to 100 for each feature type
+
+  @@unique([type, aspectKey])
 }

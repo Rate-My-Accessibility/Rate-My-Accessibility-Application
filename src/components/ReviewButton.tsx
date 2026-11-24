@@ -1,7 +1,7 @@
 'use client';
 
 import AddReviewForm from '@/components/AddReviewForm';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Container} from 'react-bootstrap';
 import { useState } from 'react';
 import { Elevator } from '@prisma/client';
 
@@ -10,7 +10,11 @@ const ReviewButton = ({ elevator } : { elevator : Elevator | null}) => {
   const [show, setShow] = useState(false);
   return (
     <main>
-        <Button onClick={() => setShow(true)}>
+        <Container>
+             <h1>Submit a Review</h1>
+        </Container>
+       
+        <Button onClick={() => setShow(true)} variant="primary" className="rounded-circle">
             Add Review
         </Button>
 

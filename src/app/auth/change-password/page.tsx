@@ -1,5 +1,7 @@
 'use client';
 
+import PasswordInput from '@/components/PasswordInput';
+
 import { useForm } from 'react-hook-form';
 import { useSession } from 'next-auth/react'; // v5 compatible
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -41,10 +43,30 @@ const ChangePassword = () => {
   });
 
   const onSubmit = async (data: ChangePasswordForm) => {
-    // console.log(JSON.stringify(data, null, 2));
-    await changePassword({ email, ...data });
-    await swal('Password Changed', 'Your password has been changed', 'success', { timer: 2000 });
-    reset();
+    if (!email) {
+      await swal('Sign in required', 'Please sign in first.', 'error');
+      return;
+    }
+    try {
+      await changePassword({
+        email,
+        currentPassword: data.oldpassword,
+        password: data.password,
+      });
+      await swal({
+        title: 'Password Changed',
+        text: 'Your password has been changed.',
+        icon: 'success',
+        timer: 2000,
+      });
+      reset();
+    } catch (error) {
+      await swal(
+        'Password change failed',
+        error instanceof Error ? error.message : 'Could not change your password. Please try again.',
+        'error',
+      );
+    }
   };
 
   if (status === 'loading') {
@@ -61,32 +83,32 @@ const ChangePassword = () => {
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group">
-                    <Form.Label>Old Passord</Form.Label>
-                    <input
-                      type="password"
+                    <Form.Label>Old Password</Form.Label>
+                    <PasswordInput
+                      label="Current password"
+                      autoComplete="current-password"
                       {...register('oldpassword')}
-                      className={`form-control ${errors.oldpassword ? 'is-invalid' : ''}`}
+                      error={errors.oldpassword?.message}
                     />
-                    <div className="invalid-feedback">{errors.oldpassword?.message}</div>
                   </Form.Group>
 
                   <Form.Group className="form-group">
                     <Form.Label>New Password</Form.Label>
-                    <input
-                      type="password"
+                    <PasswordInput
+                      label="New password"
+                      autoComplete="new-password"
                       {...register('password')}
-                      className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                      error={errors.password?.message}
                     />
-                    <div className="invalid-feedback">{errors.password?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group">
                     <Form.Label>Confirm Password</Form.Label>
-                    <input
-                      type="password"
+                    <PasswordInput
+                      label="Confirm new password"
+                      autoComplete="new-password"
                       {...register('confirmPassword')}
-                      className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                      error={errors.confirmPassword?.message}
                     />
-                    <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group py-3">
                     <Row>
