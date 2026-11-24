@@ -78,10 +78,28 @@ model Elevator {
 
 model OldReview {
   id            Int @id @default(autoincrement())
-  name          String
+  placeName     String
   content       String
   createdAt     DateTime @default(now())
   owner         String
+  photos        Photo[]
+  elevatorId    Int?
+}
+
+model Photo {
+  id          Int     @id @default(autoincrement())
+  reviewId    Int
+  elevatorId  Int?
+  source      String
+  owner       String
+  review      Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+}
+
+model Elevator {
+  id            Int     @id @default(autoincrement())
+  latitude      Float
+  longitude     Float
+  location      String
 
   @@map("Review") // preserve Review table for old-type reviews
 }

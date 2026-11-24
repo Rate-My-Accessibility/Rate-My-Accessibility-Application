@@ -6,12 +6,24 @@ import { auth } from './auth';
 import { prisma } from './prisma';
 import { HawaiiEmailSchema, PasswordSchema } from './validationSchemas';
 
-export async function addReview(review : { name: string; content: string; owner: string;}) { 
-  await prisma.oldReview.create({ // was: "review.create"
+export async function addPhoto(photo : { source: string; reviewId: number; owner: string; elevatorId: number | null;}) { 
+  await prisma.photo.create({
     data: {
-      name: review.name,
+      source: photo.source,
+      reviewId: photo.reviewId,
+      owner: photo.owner,
+      elevatorId: photo.elevatorId ?? null,
+    },
+  });
+}
+
+export async function addReview(review : { placeName: string; content: string; owner: string; elevatorId: number | null;}) { 
+  return prisma.review.create({
+    data: {
+      placeName: review.placeName,
       content: review.content,
       owner: review.owner,
+      elevatorId: review.elevatorId ?? null,
     },
   });
 }

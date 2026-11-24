@@ -17,6 +17,21 @@ body {
   flex-direction: column;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(100);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+
+.map-wrapper .leaflet-top.leaflet-left {
+  transition: transform 0.25s ease;
+}
+
+.map-wrapper.sidebar-open .leaflet-top.leaflet-left {
+  transform: translateX(330px); /* sidebar width 320 + gap 10 */
 body.wrapper > main {
   flex: 1;
 }
@@ -233,7 +248,6 @@ text-decoration: underline;
   font-size: 28px;
 }
 
-
 #auth-signin, #auth-change {
   /* Default state */
   --bs-btn-bg: rgb(0, 71, 48);
@@ -297,3 +311,4 @@ text-decoration: underline;
 .password-toggle:focus-visible {
   color: #adb5bd;
 }
+}}
