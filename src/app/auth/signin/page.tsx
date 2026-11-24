@@ -53,7 +53,7 @@ export default function SignIn() {
               <Form.Label>Password</Form.Label>
               <PasswordInput id="signin-password" label="Password" name="password" autoComplete="current-password" required />
             </Form.Group>
-            <Button type="submit">{busy ? 'Signing in…' : 'Sign in'}</Button>
+            <Button id="auth-signin" className="btn btn-primary" type="submit">{busy ? 'Signing in…' : 'Sign in'}</Button>
           </fieldset>
         </Form>
         <p className="mt-3 mb-0"><Link href="/auth/forgot-password">Forgot password?</Link></p>

@@ -232,3 +232,68 @@ text-decoration: underline;
   color: #650018;
   font-size: 28px;
 }
+
+
+#auth-signin, #auth-change {
+  /* Default state */
+  --bs-btn-bg: rgb(0, 71, 48);
+  --bs-btn-border-color: rgb(0, 71, 48);
+  --bs-btn-color: #ffffff;
+
+  /* Hover state */
+  --bs-btn-hover-bg: rgb(25, 121, 91);
+  --bs-btn-hover-border-color: rgb(25, 121, 91);
+  --bs-btn-hover-color: #ffffff;
+
+  /* Active state */
+  --bs-btn-active-bg: rgb(25, 121, 91);
+  --bs-btn-active-border-color: rgb(25, 121, 91);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-shadow: none;
+
+  /* Focus state */
+  --bs-btn-focus-shadow-rgb: 25, 121, 91;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(25, 121, 91, 0.4);
+
+  /* Disabled / submitting state */
+  --bs-btn-disabled-bg: rgb(25, 121, 91);
+  --bs-btn-disabled-border-color: rgb(25, 121, 91);
+  --bs-btn-disabled-color: #ffffff;
+}
+
+#auth-reset {
+  margin-left: auto;
+}
+
+#auth-verify {
+  /* Default state (optional - leave out to keep btn-primary's default color) */
+  --bs-btn-bg: rgb(0, 71, 48);
+  --bs-btn-border-color: rgb(0, 71, 48);
+  --bs-btn-color: #ffffff;
+
+  /* Hover highlight state */
+  --bs-btn-hover-bg: rgb(25, 121, 91);
+  --bs-btn-hover-border-color: rgb(25, 121, 91);
+  --bs-btn-hover-color: #ffffff;
+
+  /* Active (click/pressed) highlight state */
+  --bs-btn-active-bg: rgb(25, 121, 91);
+  --bs-btn-active-border-color: rgb(25, 121, 91);
+  --bs-btn-active-color: #ffffff;
+
+  /* Focus ring glow (uses RGB values without 'rgb()') */
+  --bs-btn-focus-shadow-rgb: 25, 121, 91;
+}
+
+.password-toggle {
+  color: #6c757d;
+  transition: color 0.15s ease-in-out;
+}
+
+.password-toggle:hover:not(:disabled) {
+  color: #adb5bd;
+}
+
+.password-toggle:focus-visible {
+  color: #adb5bd;
+}

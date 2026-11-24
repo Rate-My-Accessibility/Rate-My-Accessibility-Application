@@ -145,19 +145,19 @@ const SignUp = () => {
                       </Form.Group>
                     )}
                     <div className="d-flex flex-wrap gap-2">
-                      <Button type="submit">
+                      <Button id="auth-verify" variant="secondary" type="submit">
                         {isSubmitting ? 'Please wait…' : verificationId ? 'Verify and continue' : 'Send verification code'}
                       </Button>
                       {verificationId && (
-                        <Button type="button" variant="outline-secondary" onClick={restart}>
+                        <Button id="auth-verify" type="button" variant="outline-primary" onClick={restart}>
                           Request a new code / change email
                         </Button>
                       )}
-                      <Button type="button" variant="warning" onClick={() => { restart(); reset(); }}>
+                      <Button id="auth-reset" type="button" variant="outline-danger" onClick={() => { restart(); reset(); }}>
                         Reset
                       </Button>
                     </div>
-                  </fieldset>
+                  </fieldset> 
                 </Form>
               </Card.Body>
               <Card.Footer>Already verified? <a href="/auth/signin">Sign in</a></Card.Footer>

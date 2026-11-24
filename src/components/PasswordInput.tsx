@@ -50,9 +50,13 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
             aria-describedby={description}
           />
           <button
-            type="button"
-            className="position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent p-0 me-2 text-secondary d-inline-flex align-items-center justify-content-center"
-            style={{ width: '32px', height: '32px', cursor: disabled ? 'not-allowed' : 'pointer' }}
+              type="button"
+              className="password-toggle position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent p-0 me-2 d-inline-flex align-items-center justify-content-center"
+              style={{
+                width: '32px',
+                height: '32px',
+                cursor: disabled ? 'not-allowed' : 'pointer'
+              }}
             onClick={() => setVisible(current => !current)}
             disabled={disabled}
             aria-controls={inputId}
