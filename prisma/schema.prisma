@@ -46,40 +46,6 @@ model EmailVerificationToken {
   @@index([expiresAt])
 }
 
-// NOTE: Prisma does not support composite types on Postgres.
-// CURRENT SOLUTION: Use an array instead and handle the structure in our TypeScript.
-
-model Elevator {
-  id              Int           @id @default(autoincrement())
-  name            String        @unique
-  photos          String[]
-  // order: [speed, size, availability, crowding, reliability, cleanliness]
-  scores          Float[]
-  coordinates     Float[]
-  elevatorRatings ElevatorRating[]
-}
-
-model OldReview {
-  id            Int @id @default(autoincrement())
-  name          String
-  content       String
-  createdAt     DateTime @default(now())
-  owner         String
-
-  @@map("Review") // preserve Review table for old-type reviews
-}
-
-model ElevatorRating {
-  id            Int    @id @default(autoincrement())
-  elevator      Elevator @relation(fields: [elevatorName], references: [name])
-  elevatorName  String
-  user          String
-  scores        Float[]
-  text          String
-
-  @@unique([elevatorName, user])
-}
-
 model Feature {
   id              Int       @id @default(autoincrement())
   type            FeatureType
@@ -106,7 +72,6 @@ model Image {
   @@unique([featureId, priority])
 }
 
-// Placeholder table for now - current review system works differently
 model Review {
   id        Int  @id @default(autoincrement())
   feature   Feature @relation(fields: [featureId], references: [id])
