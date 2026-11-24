@@ -1,11 +1,11 @@
 'use client';
 
 import { useSession } from 'next-auth/react'; // v5 compatible
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import { addReview, addPhoto } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddReviewSchema, AddPhotoSchema } from '@/lib/validationSchemas';
@@ -22,6 +22,7 @@ type AddReviewFormProps = {
 const CombinedSchema = AddReviewSchema.concat(AddPhotoSchema.omit(['reviewId']));
 
 const AddReviewForm = ({ elevator, onCancel } : AddReviewFormProps) => {
+  const router = useRouter();
   const { data: session, status } = useSession();
   // console.log('AddStuffForm', status, session);
   const currentUser = session?.user?.email || '';
@@ -80,6 +81,7 @@ const AddReviewForm = ({ elevator, onCancel } : AddReviewFormProps) => {
     });
 
     onCancel();
+    router.refresh();
   };  
 
 

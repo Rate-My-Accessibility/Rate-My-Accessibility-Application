@@ -5,7 +5,6 @@ import { Stuff } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
-import { revalidatePath } from 'next/cache';
 
 export async function addPhoto(photo : { source: string; reviewId: number; owner: string; elevatorId: number | null;}) { 
   await prisma.photo.create({
@@ -27,8 +26,6 @@ export async function addReview(review : { placeName: string; content: string; o
       elevatorId: review.elevatorId ?? null,
     },
   });
-
-  revalidatePath('/map');
 }
 
 /**
