@@ -110,19 +110,20 @@ const ChangePassword = () => {
                       error={errors.confirmPassword?.message}
                     />
                   </Form.Group>
-                  <Form.Group className="form-group py-3">
-                    <Row>
-                      <Col>
-                        <Button type="submit" className="btn btn-primary">
-                          Change
-                        </Button>
-                      </Col>
-                      <Col>
-                        <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
-                          Reset
-                        </Button>
-                      </Col>
-                    </Row>
+                  <Form.Group className="form-group py-3 d-flex w-100">
+                    <Button id="auth-change" type="submit" variant="primary">
+                      Change
+                    </Button>
+
+                    <Button
+                      id="auth-reset"
+                      type="button"
+                      variant="outline-danger"
+                      className="ms-auto"
+                      onClick={() => reset()}
+                    >
+                      Reset
+                    </Button>
                   </Form.Group>
                 </Form>
               </Card.Body>
