@@ -30,6 +30,8 @@ model User {
   password      String
   role          Role      @default(USER)
   emailVerified DateTime?
+  passwordVersion Int    @default(0)
+  passwordResetToken PasswordResetToken?
   reviews       Review[]
 }
 
@@ -42,6 +44,21 @@ model EmailVerificationToken {
   attempts       Int      @default(0)
   windowStartsAt DateTime @default(now())
   sendCount      Int      @default(0)
+
+  @@index([expiresAt])
+}
+
+model PasswordResetToken {
+  id                  String   @id @default(uuid())
+  userId              Int      @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email               String
+  tokenHash           String?  @unique
+  passwordFingerprint String
+  expiresAt           DateTime?
+  requestedAt         DateTime @default(now())
+  windowStartsAt      DateTime @default(now())
+  sendCount           Int      @default(0)
 
   @@index([expiresAt])
 }

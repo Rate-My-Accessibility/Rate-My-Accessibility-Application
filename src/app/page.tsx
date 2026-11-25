@@ -23,7 +23,7 @@ const LandingPage = () => (
           </div>
         </Col>
       </Row>
-      <Row style={{ marginTop: '300px', backgroundColor: 'rgb(0, 71, 48)',  }} className="justify-content-center text-center text-white py-5">
+      <Row style={{ marginTop: '250px', backgroundColor: 'rgb(0, 71, 48)',  }} className="justify-content-center text-center text-white py-5">
         <Col>
         
         <h1><strong>Think The Campus Can Be Improved?</strong></h1>
