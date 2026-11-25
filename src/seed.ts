@@ -2,8 +2,7 @@ import { prisma } from './lib/prisma';
 import { Role, FeatureType } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
-import * as elevators from '../public/data/elevator.json';
-import titleCase  from './actions/titleCase';
+import updateFeatureScore from "@/lib/updateScore";
 
 async function main() {
   console.log('Seeding the database');
@@ -31,47 +30,6 @@ async function main() {
       },
     });
   }
-
-  for (const data of elevators.features) {
-    await prisma.elevator.upsert({
-      where: { id: elevators.features.indexOf(data) + 1},
-      update: {},
-      create: {
-        latitude: data.geometry.coordinates[1],
-        longitude: data.geometry.coordinates[0],
-        location: titleCase(data.properties.NEW_BLDG),
-      },
-    });
-  }
-
-  for (const elevator of config.defaultElevators) {
-    console.log(`  Adding elevator: ${elevator.name}`);
-    await prisma.elevator.upsert({
-      where: { id: config.defaultElevators.indexOf(elevator) + 1 },
-      update: {},
-      create: {
-        name: elevator.name,
-        photos: elevator.photos,
-        scores: elevator.scores,
-        coordinates: elevator.coordinates,
-      },
-    });
-  }
-  for (const rating of config.defaultElevatorRatings) {
-    console.log(`  Adding rating for elevator "${rating.elevatorName}" by "${rating.user}".`);
-    await prisma.elevatorRating.upsert({
-      where: { 
-        elevatorName_user: { elevatorName: rating.elevatorName, user: rating.user }
-       },
-      update: {},
-      create: {
-        elevatorName: rating.elevatorName,
-        user: rating.user,
-        scores: rating.scores,
-        text: rating.text,
-      },
-    });
-  }
   for (const aspect of config.defaultFeatureAspects) {
   const type = aspect.type as FeatureType;
   console.log(`  Adding aspect for ${aspect.type} feature: ${aspect.aspectKey} [Weight: ${aspect.weight}%]`);
@@ -88,6 +46,52 @@ async function main() {
     },
   });
 }
+for (const feature of config.defaultFeatures) {
+    console.log(`  Adding feature: ${feature.name}`)
+    await prisma.feature.upsert({
+      where: { sourceObjectId: feature.sourceObjectId },
+      update: {},
+      create: {
+        type: FeatureType.ELEVATOR,
+        name: feature.name,
+        building: feature.building,
+        longitude: feature.longitude,
+        latitude: feature.latitude,
+        sourceObjectId: feature.sourceObjectId,
+      },
+    });
+  }
+  for (const image of config.defaultFeatureImages) {
+    const feature = await prisma.feature.findUniqueOrThrow({ where: { sourceObjectId: image.sourceObjectId } });
+    await prisma.image.upsert({
+      where: { featureId_priority: { featureId: feature.id, priority: image.priority } },
+      update: {},
+      create: {
+        featureId: feature.id,
+        file: image.file,
+        altText: image.altText,
+        priority: image.priority,
+      },
+    });
+  }
+  for (const review of config.defaultFeatureReviews) {
+    const feature = await prisma.feature.findUniqueOrThrow({ where: { sourceObjectId: review.sourceObjectId } });
+    const user = await prisma.user.findUniqueOrThrow({ where: { email: review.user } });
+    await prisma.review.upsert({
+      where: { featureId_userId: { featureId: feature.id, userId: user.id } },
+      update: {},
+      create: {
+        featureId: feature.id,
+        userId: user.id,
+        scores: review.scores,
+        text: review.text,
+      },
+    });
+  }
+  for (const { id, name } of await prisma.feature.findMany({ select: { id: true, name: true } })) {
+    console.log(`  Updating score for ${name}`);
+    await updateFeatureScore(id);
+  }
 }
 main()
   .then(() => prisma.$disconnect())

@@ -18,11 +18,13 @@ export default function ResetPasswordForm() {
 
   useEffect(() => {
     const value = new URLSearchParams(window.location.hash.slice(1)).get('token') ?? '';
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: window.location.hash only exists post-mount (SSR-safe); token must not be consumed on load (mail scanners)
     setToken(value);
     setReady(true);
     // Do not consume the token on load; mail scanners must not reset passwords.
     // The token stays in React state until submission, not in the visible address.
   }, []);
+
 
   useEffect(() => {
     // Run after the reading effect/Strict Mode replay, preserving the in-memory token.
